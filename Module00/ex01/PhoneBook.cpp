@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 
+/// @brief class for Contact.
 class Contact
 {
 private:
@@ -25,6 +26,7 @@ public:
     }
 };
 
+/// @brief class for Phonebook.
 class PhoneBook
 {
 private:
@@ -33,6 +35,9 @@ private:
     int contactIndex;
 
 public:
+        /// @brief Add new contact to the list.
+        /// @param name the name of the contact that would be added.
+        /// @param phoneNumber the phone number of the contact that would be added.
         void addContact(const std::string& name, const std::string& phoneNumber)
         {
             if (contactIndex < 8)
@@ -59,6 +64,9 @@ public:
         }
 };
 
+/// @brief readline from stdin and execute the command if it exists.
+/// @param name the name of the contact.
+/// @param phoneNumber the phone number of the contact.
 void readline(std::string& name, std::string& phoneNumber)
 {
     PhoneBook phoneBook;

@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/25 09:27:02 by aelkheta          #+#    #+#              #
-#    Updated: 2024/08/25 09:27:03 by aelkheta         ###   ########.fr        #
+#    Created: 2024/08/25 09:27:16 by aelkheta          #+#    #+#              #
+#    Updated: 2024/08/25 09:35:57 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++ -std=c++98
-CPP_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
-NAME = PhoneBook
+CPP_FLAGS = -Wall -Wextra -Werror
+NAME = Account
 
-SRC = PhoneBook.c
+SRC = Account.cpp
 OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)
@@ -23,7 +23,7 @@ all: $(NAME)
 	$(CC) $(CPP_FLAGS) $^ -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(CPP_FLAGS) $^ -o $@
+	$(CC) $^ -o $@
 
 clean:
 	rm -f *.o
