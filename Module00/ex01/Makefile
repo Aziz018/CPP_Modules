@@ -6,7 +6,7 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:02 by aelkheta          #+#    #+#              #
-#    Updated: 2024/08/25 09:27:03 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/08/25 12:09:18 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = PhoneBook
 SRC = PhoneBook.c
 OBJ = $(SRC:%.c=%.o)
 
-all: $(NAME)
+all: $(NAME) clean
 
 %.c: %.o
 	$(CC) $(CPP_FLAGS) $^ -o $@

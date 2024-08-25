@@ -22,7 +22,7 @@ public:
 
     const std::string getPhoneNumber()
     {
-        return (phoneNumber);
+        return phoneNumber;
     }
 };
 
@@ -35,64 +35,75 @@ private:
     int contactIndex;
 
 public:
-        /// @brief Add new contact to the list.
-        /// @param name the name of the contact that would be added.
-        /// @param phoneNumber the phone number of the contact that would be added.
-        void addContact(const std::string& name, const std::string& phoneNumber)
+    PhoneBook() : contactCount(0), contactIndex(0) {}
+
+    /// @brief Add new contact to the list.
+    /// @param name the name of the contact that would be added.
+    /// @param phoneNumber the phone number of the contact that would be added.
+    void addContact(const std::string name, const std::string phoneNumber)
+    {
+        contact[contactIndex % 8].setContact(name, phoneNumber);
+        contactIndex++;
+        if (contactCount < 8)
+            contactCount++;
+    }
+
+    void displayContact(const std::string name)
+    {
+        for (int i = 0; i < contactCount; i++)
         {
-            if (contactIndex < 8)
+            if (name == contact[i].getName())
             {
-                contact[contactIndex].setContact(name, phoneNumber);
-                contactIndex++;
-            }
-            else
-            {
-                contactCount = (contactIndex) % 8;
-                contact[contactCount].setContact(name, phoneNumber);
+                std::cout << contact[i].getName() << " | " << contact[i].getPhoneNumber() << std::endl;
+                return;
             }
         }
-        void displayContact(const std::string name)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                if (name == contact[i].getName())
-                {
-                    std::cout << contact[i].getName() << "|" << contact[i].getPhoneNumber();
-                    break;
-                }
-            }
-        }
+        std::cout << "Contact not found!" << std::endl;
+    }
+
+    void displayWholeContact()
+    {
+        for (int i = 0; i < contactCount; i++)
+                std::cout << contact[i].getName() << " | " << contact[i].getPhoneNumber() << std::endl;
+    }
+
 };
 
 /// @brief readline from stdin and execute the command if it exists.
-/// @param name the name of the contact.
-/// @param phoneNumber the phone number of the contact.
-void readline(std::string& name, std::string& phoneNumber)
+/// @param phoneBook the phonebook object to perform operations on.
+void readline(PhoneBook& phoneBook)
 {
-    PhoneBook phoneBook;
-    while(1)
+    std::string name, phoneNumber;
+    while (1)
     {
-        std::cout << "Please enter one of these commands (ADD, SEARCH or EXIT):\n>>> ";
+        std::cout << "Please enter one of these commands (ADD, SEARCH, or EXIT):\n>>> ";
         std::getline(std::cin, name);
         if (name == "EXIT" || std::cin.eof())
             break;
-        std::cout << "name: " << name << std::endl;
-        if (name != "SEARCH" || name != "ADD" || name != "EXIT")
+        else if (name == "ADD")
         {
-            std::cout << "Command not found: `" << name << "\' please try again!" << std::endl;
-            continue;
+            std::cout << "Please enter the contact's name:\n>>> ";
+            std::getline(std::cin, name);
+            std::cout << "Please enter the phone number:\n>>> ";
+            std::getline(std::cin, phoneNumber);
+            phoneBook.addContact(name, phoneNumber);
         }
-        std::cout << "Please enter the phone number:\n>>> ";
-        std::getline(std::cin, phoneNumber);
-        phoneBook.addContact(name, phoneNumber);
+        else if (name == "SEARCH")
+        {
+            std::cout << "Please enter the contact's name to search:\n>>> ";
+            std::getline(std::cin, name);
+            phoneBook.displayContact(name);
+        }
+        else if (name == "DISPLAY")
+            phoneBook.displayWholeContact();
+        else
+            std::cout << "Command not found: `" << name << "' try again!" << std::endl;
     }
 }
 
 int main()
 {
-
-    void* ptr = NULL;
-    std::string  name, phoneNumber;
-    readline(name, phoneNumber);
-    return (0);
+    PhoneBook phoneBook;
+    readline(phoneBook);
+    return 0;
 }
