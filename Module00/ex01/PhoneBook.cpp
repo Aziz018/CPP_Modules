@@ -1,16 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/17 13:42:07 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/08/18 17:45:02 by aelkheta         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
+#include <cstring>
 
 class Contact
 {
@@ -25,14 +14,14 @@ public:
         phoneNumber = _phoneNumber;
     }
 
-    const std::string getName() const
+    const std::string getName()
     {
         return name;
     }
 
-    const std::string getPhoneNumber() const
+    const std::string getPhoneNumber()
     {
-        return phoneNumber;
+        return (phoneNumber);
     }
 };
 
@@ -44,86 +33,58 @@ private:
     int contactIndex;
 
 public:
-    PhoneBook() : contactCount(0), contactIndex(0) {} // Initialize members
-
-    void addContact(const std::string& name, const std::string& phoneNumber)
-    {
-        contact[contactIndex].setContact(name, phoneNumber);
-        contactIndex = (contactIndex + 1) % 8;
-        if (contactCount < 8)
+        void addContact(const std::string& name, const std::string& phoneNumber)
         {
-            contactCount++;
-        }
-    }
-
-    void displayContact(const std::string& name)
-    {
-        for (int i = 0; i < contactCount; i++)
-        {
-            if (name == contact[i].getName())
+            if (contactIndex < 8)
             {
-                std::cout << "Found contact: " << contact[i].getName() << " | " << contact[i].getPhoneNumber() << std::endl;
-                return;
+                contact[contactIndex].setContact(name, phoneNumber);
+                contactIndex++;
+            }
+            else
+            {
+                contactCount = (contactIndex) % 8;
+                contact[contactCount].setContact(name, phoneNumber);
             }
         }
-        std::cout << "Contact not found: " << name << std::endl;
-    }
-
-    void displayAllContacts()
-    {
-        if (contactCount == 0)
+        void displayContact(const std::string name)
         {
-            std::cout << "No contacts available." << std::endl;
-            return;
+            for (int i = 0; i < 8; i++)
+            {
+                if (name == contact[i].getName())
+                {
+                    std::cout << contact[i].getName() << "|" << contact[i].getPhoneNumber();
+                    break;
+                }
+            }
         }
-
-        for (int i = 0; i < contactCount; i++)
-        {
-            std::cout << i << ") " << contact[i].getName() << " | " << contact[i].getPhoneNumber() <<  std::endl;
-        }
-    }
 };
 
-void readline()
+void readline(std::string& name, std::string& phoneNumber)
 {
     PhoneBook phoneBook;
-    std::string command, name, phoneNumber;
-
-    while (1)
+    while(1)
     {
-        std::cout << "Please enter one of these commands (ADD, SEARCH, DISPLAY, or EXIT):\n>>> ";
-        std::getline(std::cin, command);
-
-        if (command == "EXIT" || std::cin.eof())
+        std::cout << "Please enter one of these commands (ADD, SEARCH or EXIT):\n>>> ";
+        std::getline(std::cin, name);
+        if (name == "EXIT" || std::cin.eof())
             break;
-
-        if (command == "ADD")
+        std::cout << "name: " << name << std::endl;
+        if (name != "SEARCH" || name != "ADD" || name != "EXIT")
         {
-            std::cout << "Please enter the name:\n>>> ";
-            std::getline(std::cin, name);
-            std::cout << "Please enter the phone number:\n>>> ";
-            std::getline(std::cin, phoneNumber);
-            phoneBook.addContact(name, phoneNumber);
+            std::cout << "Command not found: `" << name << "\' please try again!" << std::endl;
+            continue;
         }
-        else if (command == "SEARCH")
-        {
-            std::cout << "Please enter the name to search:\n>>> ";
-            std::getline(std::cin, name);
-            phoneBook.displayContact(name);
-        }
-        else if (command == "DISPLAY")
-        {
-            phoneBook.displayAllContacts();
-        }
-        else
-        {
-            std::cout << "Command not found: `" << command << "`, please try again!" << std::endl;
-        }
+        std::cout << "Please enter the phone number:\n>>> ";
+        std::getline(std::cin, phoneNumber);
+        phoneBook.addContact(name, phoneNumber);
     }
 }
 
 int main()
 {
-    readline();
-    return 0;
+
+    void* ptr = NULL;
+    std::string  name, phoneNumber;
+    readline(name, phoneNumber);
+    return (0);
 }
