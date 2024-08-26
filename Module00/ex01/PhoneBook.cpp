@@ -9,6 +9,10 @@ private:
     std::string phoneNumber;
 
 public:
+
+    /// @brief Add new contact to the list.
+    /// @param _name Contact's name.
+    /// @param _phoneNumber Contact's phone number.
     void setContact(const std::string& _name, const std::string& _phoneNumber)
     {
         name = _name;
@@ -48,6 +52,8 @@ public:
             contactCount++;
     }
 
+    /// @brief Display the contact if it found.
+    /// @param name Name of the contact that should be displayed. 
     void displayContact(const std::string name)
     {
         for (int i = 0; i < contactCount; i++)
@@ -61,6 +67,7 @@ public:
         std::cout << "Contact not found!" << std::endl;
     }
 
+    /// @brief Display the whole contact.
     void displayWholeContact()
     {
         for (int i = 0; i < contactCount; i++)
