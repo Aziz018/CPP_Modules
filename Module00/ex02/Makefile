@@ -6,7 +6,7 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:16 by aelkheta          #+#    #+#              #
-#    Updated: 2024/08/25 09:35:57 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/08/25 12:09:00 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = Account
 SRC = Account.cpp
 OBJ = $(SRC:%.c=%.o)
 
-all: $(NAME)
+all: $(NAME) clean
 
 %.c: %.o
 	$(CC) $(CPP_FLAGS) $^ -o $@

@@ -6,7 +6,7 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:05 by aelkheta          #+#    #+#              #
-#    Updated: 2024/08/25 09:27:06 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/08/25 12:08:55 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = megaphone
 SRC = megaphone.cpp
 OBJ = $(SRC:%.c=%.o)
 
-all: $(NAME)
+all: $(NAME) clean
 
 %.c: %.o
 	$(CC) $(CPP_FLAGS) $^ -o $@
