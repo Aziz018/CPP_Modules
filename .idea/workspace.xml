@@ -3,6 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="CPP_Modules_GITHUB" targetName="re" />
@@ -18,12 +21,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b64d818-4e38-49d2-ac1f-43e573f74544" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Module00/ex00/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Module00/ex00/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module00/ex00/megaphone" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module00/ex00/megaphone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Module00/ex00/megaphone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module00/ex01/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Module00/ex01/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module00/ex01/PhoneBook.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Module00/ex01/PhoneBook.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module00/ex02/ex02.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Module00/ex02/ex02.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module00/ex02/Account.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Module00/ex02/Account.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,33 +154,6 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="MakefileLocalSettings">
-    <option name="availableProjects">
-      <map>
-        <entry>
-          <key>
-            <ExternalProjectPojo>
-              <option name="name" value="CPP_Modules_GITHUB" />
-              <option name="path" value="$PROJECT_DIR$/Module00/ex01" />
-            </ExternalProjectPojo>
-          </key>
-          <value>
-            <list>
-              <ExternalProjectPojo>
-                <option name="name" value="CPP_Modules_GITHUB" />
-                <option name="path" value="$PROJECT_DIR$/Module00/ex01" />
-              </ExternalProjectPojo>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$/Module00/ex01" value="RE_IMPORT" />
-      </map>
-    </option>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -207,13 +181,13 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/nfs/homes/aelkheta/Desktop/minihell",
+    "last_opened_file_path": "/nfs/homes/aelkheta/Desktop/algebra_pool",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -258,21 +232,23 @@
       <workItem from="1723897909121" duration="1000" />
       <workItem from="1723898366274" duration="316000" />
       <workItem from="1723984363006" duration="42000" />
+      <workItem from="1724623584559" duration="50000" />
+      <workItem from="1724623642832" duration="185000" />
+      <workItem from="1724628809238" duration="40000" />
+      <workItem from="1724628916564" duration="4381000" />
+      <workItem from="1724691760247" duration="2600000" />
+      <workItem from="1724703843944" duration="753000" />
+      <workItem from="1724718265266" duration="4000" />
+      <workItem from="1724759856614" duration="27000" />
+      <workItem from="1724767623075" duration="1191000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Module00/ex01/PhoneBook.cpp</url>
-          <line>128</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

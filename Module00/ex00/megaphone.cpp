@@ -6,13 +6,15 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 01:03:12 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/08/26 01:03:13 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/08/26 01:08:09 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cctype>
 #include <iostream>
 
+/// @brief Return the uppercase version of the string.
+/// @param str The sting that should be tronsformed.
 void ippo_upper(char *str)
 {
     for (int i = 0; str && str[i]; i++)
