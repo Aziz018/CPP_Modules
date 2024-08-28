@@ -20,7 +20,13 @@ int		main( void ) {
 	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;
 
 	int	const				amounts[]	= { 42, 54, 957, 432, 1234, 0, 754, 16576 };
+
+	// same thing isn't it ??
+	// size_t const 		amounts_size = sizeof(amounts) / sizeof(int);
 	size_t const			amounts_size( sizeof(amounts) / sizeof(int) );
+
+	// this is a constructor for acconts class.
+	// cpp syntax is on fire 🔥.
 	accounts_t				accounts( amounts, amounts + amounts_size );
 	accounts_t::iterator	acc_begin	= accounts.begin();
 	accounts_t::iterator	acc_end		= accounts.end();
