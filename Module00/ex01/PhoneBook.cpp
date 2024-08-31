@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 01:03:05 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/08/30 17:47:38 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/08/31 11:59:57 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ public:
         std::cout << "Enter the index of the contact to display: ";
         int index;
         std::cin >> index;
+        if (std::cin.eof())
+            std::exit(0);
         if (index < 0 || index >= contactCount) {
             std::cout << "Invalid index!" << std::endl;
         } else {
@@ -129,7 +131,7 @@ void addNewContact(PhoneBook& phoneBook) {
     
     if (std::cin.eof()) {
         std::cin.clear();
-        return ;
+        std::exit(0);
     }
     
     if (firstName.empty() || lastName.empty() || nickname.empty() ||
