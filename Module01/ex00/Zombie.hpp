@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:33:03 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/02 02:53:02 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:04:04 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,14 @@ private:
 
 public:
 
-    // Zombie () : name (0) {}
     
+    Zombie () : name ("") {}
     Zombie (std::string& name);
     
     ~Zombie();
     
-    // void setName( std::string& name ) {
-    //     this->name = name;
-    // }
+    void setName( std::string& name );
+    std::string getName( void );
 
     void announce( void );
 };

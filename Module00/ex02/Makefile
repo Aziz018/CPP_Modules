@@ -6,7 +6,7 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:16 by aelkheta          #+#    #+#              #
-#    Updated: 2024/08/28 20:36:32 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/09/02 21:42:20 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ = $(SRC:%.c=%.o)
 all: $(NAME) clean
 
 %.c: %.o
-	$(CC) $(CPP_FLAGS) $^ -o $@
+	$(CC) $(CPP_FLAGS) -c $^ -o $@
 
 $(NAME): $(OBJ)
 	$(CC) $^ -o $@

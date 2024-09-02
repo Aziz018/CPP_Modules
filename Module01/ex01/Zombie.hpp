@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 16:19:30 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/02 08:08:35 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:05:33 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ZOMBIE_HPP
 
 # include <iostream>
+# include <string>
+
 
 class Zombie {
 private:
@@ -21,16 +23,14 @@ private:
 
 public:
 
-    Zombie () : name (0) {}
-    
-    Zombie (std::string& name);
+    Zombie () : name ("") {}
+    Zombie ( std::string& name );
     
     ~Zombie();
     
-    // void setName( std::string& name ) {
-    //     this->name = name;
-    // }
-
+    void setName( std::string& name );
+    std::string getName( void );
+    
     void announce( void );
 };
 

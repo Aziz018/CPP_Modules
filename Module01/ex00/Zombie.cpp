@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:33:01 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/02 07:32:34 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:04:15 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,12 @@ Zombie::~Zombie() {
 /// @brief Function member inside the class that announce the the zombie object.
 void Zombie::announce( void ) {
         std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-    }
+}
+
+void Zombie::setName( std::string& name ) {
+    this->name = name;    
+}
+
+std::string Zombie::getName( void ) {
+    return ( this->name );
+}
