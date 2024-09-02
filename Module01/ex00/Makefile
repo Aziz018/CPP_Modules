@@ -6,13 +6,13 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/26 18:32:58 by aelkheta          #+#    #+#              #
-#    Updated: 2024/09/02 21:41:50 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/09/02 22:14:58 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++ -std=c++98
 CPP_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
-NAME = Zombie
+NAME = BraiiiiiiinnnzzzZ
 
 SRC = main.cpp newZombie.cpp Zombie.cpp randomChump.cpp
 OBJ = $(SRC:%.c=%.o)
