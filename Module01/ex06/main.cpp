@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:40:09 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/03 17:15:50 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:19:31 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@ int main(int ac, char** av) {
     compalinLevel[2] = "WARNING";
     compalinLevel[3] = "ERROR";
 
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 5; i++) {
         if (av[1] == compalinLevel[i]) {
             harl.complain(i);
             break;
         }
+        else if (i == 4)
+            harl.complain(i);
     }
 
     return (0);

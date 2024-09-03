@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:40:03 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/03 17:14:28 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:19:57 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,10 @@ void Harl::complain( int level ) {
         
         case 3:
             Harl::error();
+            break;
         
         default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
             break;
     }
 }
