@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 21:45:41 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/13 09:20:03 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/09/13 09:13:03 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/09/13 09:26:37 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,17 @@ int Fixed::getRawBits( void ) const {
 
 void Fixed::setRawBits( int const raw ) {
     FixedPoint = raw;
+}
+
+float Fixed::toFloat( void ) const; {
+    
+}
+
+int Fixed::toInt( void ) const {
+    
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
+    std::cout << fixed.toFloat() << std::endl;
+    return os;
 }
