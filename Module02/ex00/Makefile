@@ -14,7 +14,7 @@ CC = c++ -std=c++98
 CPP_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 NAME = fixed
 
-SRC = Fixed.cpp
+SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
