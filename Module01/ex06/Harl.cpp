@@ -48,12 +48,21 @@ void Harl::complain( int level ) {
     {
         case 0:
             Harl::debug();
+            Harl::info();
+            Harl::warning();
+            Harl::error();
+            break;
         
         case 1:
             Harl::info();
+            Harl::warning();
+            Harl::error();
+            break;
         
         case 2:
             Harl::warning();
+            Harl::error();
+            break;
         
         case 3:
             Harl::error();
