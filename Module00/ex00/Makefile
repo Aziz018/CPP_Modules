@@ -19,7 +19,7 @@ OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME) clean
 
-%.c: %.o
+%.o: %.cpp
 	$(CC) $(CPP_FLAGS) -c $^ -o $@
 
 $(NAME): $(OBJ)

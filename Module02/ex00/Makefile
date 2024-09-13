@@ -14,16 +14,16 @@ CC = c++ -std=c++98
 CPP_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 NAME = fixed
 
-SRC = main.cpp Harl.cpp
-OBJ = $(SRC:%.c=%.o)
+SRC = Fixed.cpp
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-%.c: %.o
-	$(CC) $(CPP_FLAGS) -c $^ -o $@
+%.o: %.cpp
+	$(CC) $(CPP_FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(CPP_FLAGS) $^ -o $@
+	$(CC) $(CPP_FLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	rm -f *.o
@@ -33,4 +33,4 @@ fclean: clean
 
 re: fclean all
 
-.SECONDARY:
+.PHONY: all clean fclean re
