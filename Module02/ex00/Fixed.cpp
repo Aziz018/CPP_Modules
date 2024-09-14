@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 21:45:41 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/13 09:20:03 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/14 09:02:18 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,16 @@ Fixed::Fixed( const Fixed& fixed ) : FixedPoint( fixed.FixedPoint ) {
 }
 
 Fixed& Fixed::operator= ( const Fixed& copy ) {
-    if ( this != &copy ) {
-        this->FixedPoint = copy.FixedPoint;
-    }
     std::cout << "Copy assignment operator called // <-- This line may be missing depending on your implementation" << std::endl;
+    if ( this != &copy ) {
+        this->FixedPoint = copy.getRawBits();
+        // this->FixedPoint = copy.FixedPoint;
+    }
     return *this;
 }
 
 Fixed::~Fixed() {
-    std::cout << "Destructor called " << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits( void ) const {
