@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 09:13:03 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/13 09:26:37 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/15 21:39:01 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,23 @@ Fixed::Fixed() : FixedPoint( 0 ) {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed( const Fixed& fixed ) : FixedPoint( fixed.FixedPoint ) {
+Fixed::Fixed( const Fixed& fixed ) {
     std::cout << "Copy constructor called" << std::endl;
+    this->FixedPoint = fixed.getRawBits();
+    // FixedPoint( fixed.FixedPoint );
 }
 
 Fixed& Fixed::operator= ( const Fixed& copy ) {
+    std::cout << "Copy assignment operator called" << std::endl;
     if ( this != &copy ) {
-        this->FixedPoint = copy.FixedPoint;
+        this->FixedPoint = copy.getRawBits();
+        // this->FixedPoint = copy.FixedPoint;
     }
-    std::cout << "Copy assignment operator called // <-- This line may be missing depending on your implementation" << std::endl;
     return *this;
 }
 
 Fixed::~Fixed() {
-    std::cout << "Destructor called " << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits( void ) const {

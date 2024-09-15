@@ -6,14 +6,13 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 09:13:53 by aelkheta          #+#    #+#              #
-#    Updated: 2024/09/13 09:13:54 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/09/15 21:39:28 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++ -std=c++98
 CPP_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 NAME = fixed
-
 SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
 
