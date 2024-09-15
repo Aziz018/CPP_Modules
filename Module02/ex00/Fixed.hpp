@@ -6,20 +6,25 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 21:45:44 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/13 09:18:13 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/15 21:24:53 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//     ┌─ Orthodox Canonical Form
-//     │
-//     └──> Default constructor
-//     │
-//     └──> Copy constructor
-//     │
-//     └──> Copy assignment operator
-//     │
-//     └──> Destructor
 
+//      ┌─ Orthodox Canonical Form: the four required member functions. ─────┐
+//      │                                                                    │
+//      └─────────────────────────> Default constructor <────────────────────┘
+//      │                                                                    │
+//      └───────────────────────────> Copy constructor <─────────────────────┘
+//      │                                                                    │
+//      └────────────────────────> Copy assignment operator <────────────────┘
+//      │                                                                    │
+//      └─────────────────────────────> Destructor <─────────────────────────┘
+
+//                 ┌──────────────────── Class Code ────────────────────┐
+//                 │                                                    │
+//    The header file: (.hpp/.h)                             the source file (.cpp)
+//  contains the class definition.                         contains the implementation.
 
 # ifndef FIXED_HPP
 # define FIXED_HPP
