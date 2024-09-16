@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 21:45:44 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/15 21:24:53 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/15 21:51:21 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@
 
 # include <iostream>
 
-class Fixed
-{
+class Fixed {
 private:
     int FixedPoint;
     static const int FractionalBits;
