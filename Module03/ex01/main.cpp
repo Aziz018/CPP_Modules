@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 01:54:58 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/17 22:03:50 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/17 23:47:21 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int main() {
     
     ScavTrap st("scav");
     st.attack("mohamed");
+    st.beRepaired(3);
+    st.takeDamage(10);
+    st.guardGate();
 
     return 0;
 }
