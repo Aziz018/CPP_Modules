@@ -6,14 +6,14 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/16 01:55:00 by aelkheta          #+#    #+#              #
-#    Updated: 2024/09/16 04:41:25 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/09/17 21:55:40 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++ -std=c++98
 CPP_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
-NAME = ClapTrap
-SRC = main.cpp ClapTrap.cpp
+NAME = ScavTrap
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
