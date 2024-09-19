@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 01:54:58 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/17 23:47:21 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/19 22:22:28 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main() {
     ct.beRepaired(2);
     ct.beRepaired(2);
 
-    std::cout << "Energie points " << ct.getEnergyPoints() << std::endl;
+    // std::cout << "Energie points " << ct.getEnergyPoints() << std::endl;
     
     ScavTrap st("scav");
     st.attack("mohamed");

@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 05:31:01 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/17 23:45:14 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/19 22:24:22 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ ScavTrap::~ScavTrap() {
 }
 
 void ScavTrap::attack( const std::string& target ) {
-    if (this->getEnergyPoints() > 0 && this->getHitPoints() > 0) {
-        std::cout << "ScavTrap "<< this->getName() << " attack " << target << std::endl;
-        this->setEnergyPoints(this->getEnergyPoints() - 1);
+    if (this->EnergyPoints > 0 && this->HitPoints > 0) {
+        std::cout << "ScavTrap "<< this->Name << " attack " << target << std::endl;
+        this->EnergyPoints -= 1;
     }
 }
 
