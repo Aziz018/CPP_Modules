@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 16:19:49 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/02 23:48:22 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/21 20:45:25 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
     ~HumanB();
     
     void attack(void);
-    void setWeapon(Weapon* weapon);
+    void setWeapon(Weapon& weapon);
 };
 
 # endif // HUMAN_B_HPP
