@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 09:13:03 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/15 21:39:01 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/27 15:59:16 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ Fixed& Fixed::operator= ( const Fixed& copy ) {
     return *this;
 }
 
+std::ostream& Fixed::operator<< (std::ostream& os, const Fixed& fixed) {
+    std::cout << fixed.toFloat() << std::endl;
+    return os;
+}
+
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
@@ -46,15 +51,10 @@ void Fixed::setRawBits( int const raw ) {
     FixedPoint = raw;
 }
 
-float Fixed::toFloat( void ) const; {
-    
+float Fixed::toFloat( void ) const {
+    return this->FixedPoint / (1 << this->FractionalBits);
 }
 
 int Fixed::toInt( void ) const {
-    
-}
-
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
-    std::cout << fixed.toFloat() << std::endl;
-    return os;
+    return this->FixedPoint * (1 << this->FractionalBits);
 }
