@@ -6,12 +6,17 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 09:13:08 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/13 09:17:06 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/27 21:10:31 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Fixed.hpp"
 # include <iostream>
+# include "Fixed.hpp"
+
+std::ostream& operator<< ( std::ostream& os, const Fixed& fixed ) {
+    std::cout << fixed.toFloat() << std::endl;
+    return os;
+}
 
 int main( void ) {
     

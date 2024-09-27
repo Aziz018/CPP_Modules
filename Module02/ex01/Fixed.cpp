@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 09:13:03 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/27 15:59:16 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/27 21:06:30 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,32 @@ Fixed::Fixed() : FixedPoint( 0 ) {
 
 Fixed::Fixed( const Fixed& fixed ) {
     std::cout << "Copy constructor called" << std::endl;
-    this->FixedPoint = fixed.getRawBits();
-    // FixedPoint( fixed.FixedPoint );
+    // this->FixedPoint = fixed.getRawBits();
+    FixedPoint = fixed.FixedPoint;
 }
 
 Fixed& Fixed::operator= ( const Fixed& copy ) {
     std::cout << "Copy assignment operator called" << std::endl;
     if ( this != &copy ) {
-        this->FixedPoint = copy.getRawBits();
-        // this->FixedPoint = copy.FixedPoint;
+        // this->FixedPoint = copy.getRawBits();
+        this->FixedPoint = copy.FixedPoint;
     }
     return *this;
 }
 
-std::ostream& Fixed::operator<< (std::ostream& os, const Fixed& fixed) {
-    std::cout << fixed.toFloat() << std::endl;
-    return os;
+// std::ostream& operator<< ( std::ostream& os, const Fixed& fixed ) {
+//     std::cout << fixed.toFloat() << std::endl;
+//     return os;
+// }
+
+Fixed::Fixed( const int& fixed ) {
+    std::cout << "Int constructor called" << std::endl;
+    FixedPoint = fixed * (1 << this->FractionalBits);
+}
+
+Fixed::Fixed( const float& fixed ) {
+    std::cout << "Float constructor called" << std::endl;
+    FixedPoint = fixed * (1 << this->FractionalBits);
 }
 
 Fixed::~Fixed() {
