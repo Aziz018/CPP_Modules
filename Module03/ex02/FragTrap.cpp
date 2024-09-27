@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 05:31:04 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/17 23:29:47 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/09/17 23:49:00 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/09/18 21:04:17 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ClapTrap.hpp"
+# include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap {
-private:
-    
-public:
-    ScavTrap( const std::string& name );
-    ~ScavTrap();
 
-    void attack( const std::string& target );
-    void guardGate();
-};
+int main()
+{
+    std::cout << "[" << __FILE__ << ":" << __LINE__ << "]" << std::endl;
+    std::cout << __DATE__ << std::endl;
+    // std::cout << __FILE__ << std::endl;
+    // std::cout << __FILE__ << std::endl;
+
+    return 0;    
+} 

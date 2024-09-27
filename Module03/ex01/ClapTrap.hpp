@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 01:54:52 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/16 04:40:34 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/19 22:23:11 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,27 @@
 # include <iostream>
 
 class ClapTrap {
-private:
+protected:
     std::string Name;
     unsigned int HitPoints;
     unsigned int EnergyPoints;
     unsigned int AttackDamage;
 public:
+    // ClapTrap( const std::string& name, unsigned int& hitPoint, unsigned int& energiePoint, unsigned int& attackDamage);
     ClapTrap( const std::string& name );
     ClapTrap( const ClapTrap &claptrap );
     ClapTrap& operator= ( const ClapTrap& copy );
     ~ClapTrap();
 
-    const std::string& getName() const;
-    const unsigned int& getHitPoints() const;
-    const unsigned int& getEnergyPoints() const;
-    const unsigned int& getAttackDamage() const;
+    // const std::string& getName() const;
+    // const unsigned int& getHitPoints() const;
+    // const unsigned int& getEnergyPoints() const;
+    // const unsigned int& getAttackDamage() const;
+
+    // void setName( std::string& name );
+    // void setHitPoints( unsigned int hitPoint );
+    // void setEnergyPoints( unsigned int energiePoint );
+    // void setAttackDamage( unsigned int attackDamage );
 
     void attack( const std::string& target );
     void takeDamage( unsigned int amount );
