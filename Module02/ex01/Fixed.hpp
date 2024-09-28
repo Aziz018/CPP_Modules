@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 09:12:56 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/28 20:06:15 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/28 21:17:56 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ private:
 
 public:
     Fixed();
-    Fixed( const int& fixed );
-    Fixed( const float& fixed );
+    Fixed( const int fixed );
+    Fixed( const float fixed );
 
-    Fixed( const Fixed &fixed );
+    Fixed( const Fixed& fixed );
     Fixed& operator= ( const Fixed& copy );
     ~Fixed();
 
