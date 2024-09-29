@@ -6,13 +6,14 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 01:03:05 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/05 06:17:07 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/19 00:34:39 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-#include <string>
+# include <iostream>
+# include <iomanip>
+# include <string>
+# include <cstdlib>
 
 class Contact {
 private:
