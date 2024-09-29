@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 09:13:03 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/29 10:45:43 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/09/29 11:08:45 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,15 +95,21 @@ bool Fixed::operator!= ( const Fixed& fixed ) {
 }
 
 Fixed Fixed::operator+ ( const Fixed& fixed ) {
-    return FixedPoint + fixed.FixedPoint;
+    Fixed result;
+    result.FixedPoint = FixedPoint + fixed.FixedPoint;
+    return result;
 }
 
 Fixed Fixed::operator- ( const Fixed& fixed ) {
-    return FixedPoint - fixed.FixedPoint;
+    Fixed result;
+    result.FixedPoint = FixedPoint - fixed.FixedPoint;
+    return result;
 }
 
-Fixed Fixed::operator* ( const Fixed& fixed ) {
-    return (FixedPoint * fixed.FixedPoint);
+Fixed Fixed::operator* (const Fixed& fixed) {
+        Fixed result;
+        result.FixedPoint = (this->FixedPoint * fixed.FixedPoint) / (1 << FractionalBits);
+        return result;
 }
 
 Fixed Fixed::operator/ ( const Fixed& fixed ) {
@@ -111,7 +117,7 @@ Fixed Fixed::operator/ ( const Fixed& fixed ) {
         throw std::invalid_argument("Division by zero!");
     }
     Fixed result;
-    result.FixedPoint = FixedPoint / fixed.FixedPoint;
+    result.FixedPoint = (FixedPoint << FractionalBits) / fixed.FixedPoint;
     return result;
 }
 
