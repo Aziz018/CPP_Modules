@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phone.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: heisenberg <heisenberg@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 03:03:52 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/05 06:44:26 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:57:33 by heisenberg       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,11 @@ std::string Contact::truncatedField(const std::string& field) const {
 }
 
 void Contact::displayFullContact() const {
-    std::cout << "First name: ......... " << firstName << std::endl;
-    std::cout << "Last name: .......... " << lastName << std::endl;
-    std::cout << "Nick name: .......... " << nickName << std::endl;
-    std::cout << "Darkest secret: ..... " << darkestSecret << std::endl;
-    std::cout << "Phone number: ....... " << phoneNumber << std::endl;
-
+    std::cout << "First name:       " << firstName << std::endl;
+    std::cout << "Last name:        " << lastName << std::endl;
+    std::cout << "Nick name:        " << nickName << std::endl;
+    std::cout << "Darkest secret:   " << darkestSecret << std::endl;
+    std::cout << "Phone number:     " << phoneNumber << std::endl;
 }
 
 class PhoneBook
@@ -104,10 +103,10 @@ void PhoneBook::searchForContact() const {
         return ;
     }
 
-    std::cout << std::setw(10) << "Index" << " | "
-              << std::setw(10) << "First Name" << " | "
-              << std::setw(10) << "Last Name" << " | "
-              << std::setw(10) << "Nick Name" << " | "
+    std::cout << std::setw(10) << "Index"       << " | "
+              << std::setw(10) << "First Name"  << " | "
+              << std::setw(10) << "Last Name"   << " | "
+              << std::setw(10) << "Nick Name"   << " | "
               << std::endl;
     for (int i = 0; i < contactCount; i++) {
         contacts[i].displaySummContact(i);
@@ -179,20 +178,21 @@ int main() {
         std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
         std::getline(std::cin, command);
 
-        if (command == "ADD") {
+        if (std::cin.eof()) {
+            break;
+        }
+        else if (command == "ADD") {
             addPhoneBook(phoneBook);
         }
         else if (command == "SEARCH") {
             phoneBook.searchForContact();
-            continue;
         }
-        else if (command == "EXIT" || std::cin.eof()) {
+        else if (command == "EXIT") {
             break;
         }
         else {
             std::cout << "Invalid command!" << std::endl;
         }
     }
-
     return 0;
 }
