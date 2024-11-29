@@ -6,7 +6,7 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:05 by aelkheta          #+#    #+#              #
-#    Updated: 2024/09/02 21:42:05 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/11/29 14:22:00 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,20 +15,27 @@ CPP_FLAGS = -Wall -Wextra -Werror
 NAME = megaphone
 
 SRC = megaphone.cpp
-OBJ = $(SRC:%.c=%.o)
+OBJ := $(SRC:%.cpp=%.o)
+# SRC := $(shell find . -name '*.cpp') # PhoneBook.cpp
 
 all: $(NAME) clean
 
 %.o: %.cpp
-	$(CC) $(CPP_FLAGS) -c $^ -o $@
+	@$(CC) $(CPP_FLAGS) -c $^ -o $@
+	@echo "Compiling ..."
 
 $(NAME): $(OBJ)
-	$(CC) $^ -o $@
+	@$(CC) $^ -o $@
+	@echo "Compiling ..."
 
 clean:
-	rm -f *.o
+	@rm -f *.o
+	@echo "Cleaning ..."
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Cleaning ..."
 
 re: fclean all
+
+.SECONDARY:
