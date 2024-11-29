@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 01:03:05 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/11/29 12:04:22 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/11/29 12:05:31 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,30 +128,4 @@ void addNewContact(PhoneBook& phoneBook) {
     newContact.setContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
     phoneBook.addContact(newContact);
     std::cout << "Contact added!" << std::endl;
-}
-
-int main() {
-    PhoneBook phoneBook;
-    std::string command;
-
-    while (true) {
-        std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-        std::getline(std::cin, command);
-
-        if (command == "ADD") {
-            addNewContact(phoneBook);
-        }
-        else if (command == "SEARCH") {
-            phoneBook.searchContact();
-        }
-        else if (command == "EXIT" || std::cin.eof()) {
-            std::cout << "\nBye Bye!" << std::endl;
-            break;
-        }
-        else {
-            std::cout << "Invalid command!" << std::endl;
-        }
-    }
-
-    return 0;
 }

@@ -6,7 +6,7 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:02 by aelkheta          #+#    #+#              #
-#    Updated: 2024/11/29 11:59:10 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/11/29 12:07:09 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CPP_FLAGS := -Wall -Wextra -Werror -g3 -fsanitize=address
 INCLUDE := -I./
 NAME := PhoneBook
 
-SRC := PhoneBook.cpp
+SRC := $(shell find . -name '*.cpp') # PhoneBook.cpp
 OBJ := $(SRC:%.cpp=%.o)
 
 all: $(NAME)

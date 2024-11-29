@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:53:57 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/11/29 12:04:30 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/11/29 12:06:07 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,5 @@ public:
     void searchContact() const;
    
 };
+
+void addNewContact(PhoneBook& phoneBook);
