@@ -97,4 +97,3 @@ void Account::_displayTimestamp(void) {
     std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", localTime);
     std::cout << buffer;
 }
-
