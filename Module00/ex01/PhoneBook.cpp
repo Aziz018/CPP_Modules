@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: heisenberg <heisenberg@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 01:03:05 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/01 16:52:57 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/01 18:02:13 by heisenberg       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ bool isNumbers (std::string& str) {
 }
 
 bool isValidPhoneNumber( std::string& phoneNumber ) {
-    if (!isNumbers(phoneNumber))
+    if ((phoneNumber[0] != '+' && !std::isdigit(phoneNumber[0])) || !isNumbers(phoneNumber))
         return false;
     return true;
 }
@@ -165,6 +165,7 @@ void addNewContact(PhoneBook& phoneBook) {
         readLine("Enter phone number: ", phoneNumber);
         if (isValidPhoneNumber(phoneNumber))
             break;
+        std::cerr << "Invalid phone number!" << std::endl;
     }
     readLine("Enter darkest secret: ", darkestSecret);
 
