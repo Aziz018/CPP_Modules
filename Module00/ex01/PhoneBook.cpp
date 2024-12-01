@@ -6,19 +6,27 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 01:03:05 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/11/29 12:05:31 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/01 16:50:32 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <PhoneBook.hpp>
 
 bool isNumbers (std::string& str) {
-    for (size_t i = 0; i < str.length(); i++) {
+    size_t i = 0;
+    
+    if (str[0] == '+' || str[0] == '-')
+        i++;
+    for (; i < str.length(); i++) {
         if (!std::isdigit(str[i])) {
-            return (false);
+            return false;
         }
     }
-    return (true);
+    return true;
+}
+
+bool isValidPhoneNumber( std::string& phoneNumber ) {
+    
 }
 
 std::string Contact::truncateField(const std::string& field) const {
@@ -38,18 +46,18 @@ void Contact::setContact(const std::string& fn, const std::string& ln, const std
 
 void Contact::displaySummary(int index) const {
     std::cout << std::setw(10) << index << " | "
-                << std::setw(10) << truncateField(firstName) << " | "
-                << std::setw(10) << truncateField(lastName) << " | "
+                << std::setw(10) << truncateField(firstName) << "|"
+                << std::setw(10) << truncateField(lastName) << "|"
                 << std::setw(10) << truncateField(nickname) << std::endl;
 }
 
 void Contact::displayFull() const {
     std::cout << std::endl;
-    std::cout << "First name: ....... " << firstName << std::endl;
-    std::cout << "Last name: ........ " << lastName << std::endl;
-    std::cout << "Nick name: ........ " << nickname << std::endl;
-    std::cout << "Phone number: ..... " << phoneNumber << std::endl;
-    std::cout << "Darkest secret: ... " << darkestSecret << std::endl;
+    std::cout << "First name     : " << firstName << std::endl;
+    std::cout << "Last name      : " << lastName << std::endl;
+    std::cout << "Nick name      : " << nickname << std::endl;
+    std::cout << "Phone number   : " << phoneNumber << std::endl;
+    std::cout << "Darkest secret : " << darkestSecret << std::endl;
 }
 
 void PhoneBook::addContact(const Contact& newContact) {
@@ -66,9 +74,9 @@ void PhoneBook::searchContact() const {
         return;
     }
 
-    std::cout << std::setw(10) << "Index" << " | "
-                << std::setw(10) << "First Name" << " | "
-                << std::setw(10) << "Last Name" << " | "
+    std::cout << std::setw(10) << "Index" << "|"
+                << std::setw(10) << "First Name" << "|"
+                << std::setw(10) << "Last Name" << "|"
                 << std::setw(10) << "Nick Name" << std::endl;
     for (int i = 0; i < contactCount; ++i) {
         contacts[i].displaySummary(i);
@@ -98,6 +106,36 @@ void PhoneBook::searchContact() const {
     }
 }
 
+bool isAllSpaces( std::string& line ) {
+    for (size_t i = 0; i < line.length(); i++) {
+        if (!std::isspace(line[i]))
+            return false;
+    }
+    return true;
+}
+
+bool validInput( std::string& line ) {
+    if (isAllSpaces(line))
+        return false;
+    for (size_t i = 0; i < line.length(); i++) {
+        if (!std::isprint(line[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+size_t chrNum( std::string& line ) {
+    size_t len = 0;
+
+    for (size_t i = 0; i < line.length(); i++)
+    {
+        if (std::isalnum(line[i]))
+            len++;
+    }
+    return len;
+}
+
 void readLine(const std::string& prompt, std::string& line)
 {
     while(true) {
@@ -109,7 +147,7 @@ void readLine(const std::string& prompt, std::string& line)
             std::cout << "\nBye Bye!" << std::endl;
             std::exit(EXIT_SUCCESS);
         }
-        if (!line.empty())
+        if (!line.empty() && validInput(line) && chrNum(line) >= 2)
             break;
         std::cerr << "Error: please try again!" << std::endl;
     }

@@ -6,12 +6,12 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:02 by aelkheta          #+#    #+#              #
-#    Updated: 2024/11/29 14:21:37 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/12/01 15:57:55 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++ -std=c++98
-CPP_FLAGS := -Wall -Wextra -Werror -g3 -fsanitize=address
+CC := c++
+CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 INCLUDE := -I./
 NAME := PhoneBook
 

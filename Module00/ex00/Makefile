@@ -6,19 +6,19 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:05 by aelkheta          #+#    #+#              #
-#    Updated: 2024/11/29 14:22:00 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/12/01 15:58:29 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++ -std=c++98
-CPP_FLAGS = -Wall -Wextra -Werror
+CC = c++
+CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = megaphone
 
 SRC = megaphone.cpp
 OBJ := $(SRC:%.cpp=%.o)
 # SRC := $(shell find . -name '*.cpp') # PhoneBook.cpp
 
-all: $(NAME) clean
+all: $(NAME)
 
 %.o: %.cpp
 	@$(CC) $(CPP_FLAGS) -c $^ -o $@
