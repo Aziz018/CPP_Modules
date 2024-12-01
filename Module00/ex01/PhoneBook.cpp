@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 01:03:05 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/01 16:50:32 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/01 16:52:57 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ bool isNumbers (std::string& str) {
 }
 
 bool isValidPhoneNumber( std::string& phoneNumber ) {
-    
+    if (!isNumbers(phoneNumber))
+        return false;
+    return true;
 }
 
 std::string Contact::truncateField(const std::string& field) const {
@@ -159,7 +161,11 @@ void addNewContact(PhoneBook& phoneBook) {
     readLine("Enter first name: ", firstName);
     readLine("Enter last name: ", lastName);
     readLine("Enter nickname: ", nickname);
-    readLine("Enter phone number: ", phoneNumber);
+    while(true) {
+        readLine("Enter phone number: ", phoneNumber);
+        if (isValidPhoneNumber(phoneNumber))
+            break;
+    }
     readLine("Enter darkest secret: ", darkestSecret);
 
     Contact newContact;
