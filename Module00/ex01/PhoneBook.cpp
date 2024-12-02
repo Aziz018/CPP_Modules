@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heisenberg <heisenberg@student.42.fr>      +#+  +:+       +#+        */
+/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 01:03:05 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/01 18:02:13 by heisenberg       ###   ########.fr       */
+/*   Updated: 2024/12/02 09:38:35 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ bool isValidPhoneNumber( std::string& phoneNumber ) {
 }
 
 std::string Contact::truncateField(const std::string& field) const {
-    if (field.length() > 10)
-        return field.substr(0, 9) + ".";
-    return field;
+    return (field.length() > 10) ? (field.substr(0, 9) + ".") : field;
 }
 
 void Contact::setContact(const std::string& fn, const std::string& ln, const std::string& nn,
@@ -47,7 +45,7 @@ void Contact::setContact(const std::string& fn, const std::string& ln, const std
 }
 
 void Contact::displaySummary(int index) const {
-    std::cout << std::setw(10) << index << " | "
+    std::cout   << std::setw(10) << index << "|"
                 << std::setw(10) << truncateField(firstName) << "|"
                 << std::setw(10) << truncateField(lastName) << "|"
                 << std::setw(10) << truncateField(nickname) << std::endl;
@@ -64,6 +62,7 @@ void Contact::displayFull() const {
 
 void PhoneBook::addContact(const Contact& newContact) {
     contacts[nextIndex] = newContact;
+    nextIndex = nextIndex > 7 ? 0 : nextIndex;
     nextIndex = (nextIndex + 1) % 8;
     if (contactCount < 8) {
         contactCount++;
@@ -76,7 +75,7 @@ void PhoneBook::searchContact() const {
         return;
     }
 
-    std::cout << std::setw(10) << "Index" << "|"
+    std::cout   << std::setw(10) << "Index" << "|"
                 << std::setw(10) << "First Name" << "|"
                 << std::setw(10) << "Last Name" << "|"
                 << std::setw(10) << "Nick Name" << std::endl;
@@ -146,7 +145,6 @@ void readLine(const std::string& prompt, std::string& line)
                    
         if (std::cin.eof()) {
             std::cin.clear();
-            std::cout << "\nBye Bye!" << std::endl;
             std::exit(EXIT_SUCCESS);
         }
         if (!line.empty() && validInput(line) && chrNum(line) >= 2)
