@@ -6,7 +6,7 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:05 by aelkheta          #+#    #+#              #
-#    Updated: 2024/12/01 15:58:29 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/12/02 11:22:46 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 	@echo "Compiling ..."
 
 $(NAME): $(OBJ)
-	@$(CC) $^ -o $@
+	@$(CC) $(CPP_FLAGS) $^ -o $@
 	@echo "Compiling ..."
 
 clean:
