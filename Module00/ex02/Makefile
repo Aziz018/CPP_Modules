@@ -6,12 +6,13 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:16 by aelkheta          #+#    #+#              #
-#    Updated: 2024/12/02 11:14:13 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/12/02 11:31:43 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++
 CPP_FLAGS := -Wall -Wextra -Werror -std=c++98
+INCLUDE := -I./
 NAME := Account
 
 # SRC = tests.cpp Account.cpp
@@ -19,14 +20,13 @@ SRC := ${shell find . -name '*.cpp'}
 OBJ := $(SRC:%.c=%.o)
 
 all: $(NAME)
-	@echo "${SRC}"
 
 %.o: %.cpp
-	@$(CC) $(CPP_FLAGS) -c $^ -o $@
+	@$(CC) $(CPP_FLAGS) ${INCLUDE} -c $^ -o $@
 	@echo "Compiling ..."
 
 $(NAME): $(OBJ)
-	@$(CC) $(CPP_FLAGS) $^ -o $@
+	@$(CC) $(CPP_FLAGS) ${INCLUDE} $^ -o $@
 	@echo "Compiling ..."
 
 clean:

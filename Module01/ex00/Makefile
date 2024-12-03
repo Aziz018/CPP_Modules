@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++ -std=c++98
-CPP_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CC = c++
+CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 # -g3 -fsanitize=address
 NAME = BraiiiiiiinnnzzzZ
 
 SRC = main.cpp newZombie.cpp Zombie.cpp randomChump.cpp

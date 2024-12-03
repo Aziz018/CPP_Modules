@@ -6,13 +6,13 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 09:26:12 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/02 10:52:16 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:32:13 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctime>
 #include <iostream>
-#include "Account.hpp"
+#include <Account.hpp>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
