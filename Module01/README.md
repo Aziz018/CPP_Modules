@@ -19,7 +19,8 @@ static int count = 0; // Static variable remains in memory throughout program.
 
 <br>
 <div align="center">
-    <img src="./memoryLayoutC.jpg">
+    <img src="./media/memoryLayoutC.jpg">
+    <p>source: https://www.geeksforgeeks.org/memory-layout-of-c-program/</p>
 </div>
 
 ### 2- Automatic memory allocation
@@ -36,6 +37,7 @@ static int count = 0; // Static variable remains in memory throughout program.
 void example() {
     int x = 42; // x is automatically allocated and deallocated on the stack.
 } // x goes out of scope and memory is released.
+
 ```
 
 ### 3- Dynamic memory allocation
@@ -68,6 +70,12 @@ delete[] arr;           // Free the memory for the array.
 | **Flexibility**   |	Fixed Size	        |   Fixed Size	        |   Dynamic Size            |
 | **Efficiency**    |	Very Fast	        |       Fast            |	Slower (Fragmentation)  |
 | **Deallocation**   |	Implicit (By Compiler)|	Implicit (By Compiler)|	Explicit (By Programmer)|
+
+<br>
+<div align="center">
+    <img src="./media/new_can_fail.png">
+    <p>source: https://www.learncpp.com/cpp-tutorial/dynamic-memory-allocation-with-new-and-delete/</p>
+</div>
 
 ## Pointers to members
 

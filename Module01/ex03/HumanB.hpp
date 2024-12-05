@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 16:19:49 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/21 20:45:25 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/05 17:05:45 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define HUMAN_B_HPP
 
 # include "Weapon.hpp"
+
+# define nullptr NULL
 
 class HumanB {
 private:

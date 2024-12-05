@@ -6,12 +6,12 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/31 16:19:54 by aelkheta          #+#    #+#              #
-#    Updated: 2024/09/02 23:43:05 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/12/05 17:05:42 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++ -std=c++98
-CPP_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CC = c++
+CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 # -g3 -fsanitize=address
 NAME = UnnecessaryViolence
 
 SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
