@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 08:14:53 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/08 10:13:37 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/09 11:57:38 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,35 @@ class Fixed {
     public:
         Fixed();
         Fixed( const Fixed& fixed );
-        Fixed(const int fixed);
-        Fixed(const float fixed);
+        Fixed( const int fixed );
+        Fixed( const float fixed );
         ~Fixed();
         
-        Fixed& operator=( const Fixed& fixedCopy );
+        Fixed& operator= ( const Fixed& fixedCopy );
+        
+        bool operator> ( const Fixed& fixed );
+        bool operator< ( const Fixed& fixed );
+        bool operator>= ( const Fixed& fixed );
+        bool operator<= ( const Fixed& fixed );
+        bool operator== ( const Fixed& fixed );
+        bool operator!= ( const Fixed& fixed );
+
+        Fixed operator+ ( const Fixed& fixed ) const;
+        Fixed operator- ( const Fixed& fixed ) const;
+        Fixed operator* ( const Fixed& fixed ) const;
+        Fixed operator/ ( const Fixed& fixed ) const;
+
+        Fixed& operator++ ();
+        Fixed operator++ ( int );
+        Fixed& operator-- ();
+        Fixed operator-- ( int );
+
+        static Fixed& max ( Fixed& first, Fixed& second );
+        static Fixed& min ( Fixed& first, Fixed& second );
+
+        static const Fixed& min ( const Fixed& first, const Fixed& second );
+        static const Fixed& max ( const Fixed& first, const Fixed& second );
+
         int getRawBits( void ) const;
         void setRawBits( int const raw );
         float toFloat( void ) const;

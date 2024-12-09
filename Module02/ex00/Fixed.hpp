@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 21:45:44 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/15 21:51:21 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/12/08 08:14:53 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/12/08 10:03:19 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 //      ┌─ Orthodox Canonical Form: the four required member functions. ─────┐
 //      │                                                                    │
@@ -21,8 +20,8 @@
 //      │                                                                    │
 //      └─────────────────────────────> Destructor <─────────────────────────┘
 
-//                 ┌──────────────────── Class Code ────────────────────┐
-//                 │                                                    │
+//               ┌──────────────────── Class Code ────────────────────┐
+//               │                                                    │
 //    The header file: (.hpp/.h)                             the source file (.cpp)
 //  contains the class definition.                         contains the implementation.
 
@@ -32,18 +31,16 @@
 # include <iostream>
 
 class Fixed {
-private:
-    int FixedPoint;
-    static const int FractionalBits;
-
-public:
-    Fixed();
-    Fixed( const Fixed &fixed );
-    Fixed& operator= ( const Fixed& copy );
-    ~Fixed();
-
-    int getRawBits( void ) const;
-    void setRawBits( int const raw );
+    private:
+        int FixedPoint;
+        static const int FractionalBits;
+    public:
+        Fixed();
+        Fixed( const Fixed& fixed );        
+        ~Fixed();
+        Fixed& operator=( const Fixed& fixedCopy );
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
 };
 
 # endif // FIXED_HPP

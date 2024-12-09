@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 21:45:46 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/27 19:40:20 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/12/08 08:42:03 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/12/08 08:42:41 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include "Fixed.hpp"
+# include <Fixed.hpp>
 
 int main( void ) {
     Fixed a;

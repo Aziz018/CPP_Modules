@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 08:18:17 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/09 09:24:18 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/09 12:55:17 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,33 @@
 const int Fixed::FractionalBits = 8;
 
 Fixed::Fixed() : FixedPoint(0) {
-    std::cout << "Default constructor called" << std::endl;
+    // std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( const Fixed& fixed ) {
-    std::cout << "Copy constructor called" << std::endl;
+    // std::cout << "Copy constructor called" << std::endl;
     *this = fixed;
     // this->FixedPoint = fixed.getRawBits();
 }
 
 Fixed::Fixed( const int fixed ) {
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
     this->FixedPoint = fixed * (1 << this->FractionalBits);
     // this->FixedPoint = fixedVlaue * 256; //(1 << this->FractionalBits);
 }
 
 Fixed::Fixed( const float fixed ) {
-    std::cout << "float constructor called" << std::endl;
+    // std::cout << "float constructor called" << std::endl;
     this->FixedPoint = roundf(fixed * (1 << this->FractionalBits));
 }
 
 Fixed::~Fixed() {
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
 }
 
 Fixed& Fixed::operator= ( const Fixed& fixedCopy ) {
-    std::cout << "Copy assignment operator called" << std::endl;
-    if (this != &fixedCopy) {
+    // std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &fixedCopy) {   // Self-assignment check
         this->FixedPoint = fixedCopy.getRawBits();
     }
     return *this;
@@ -72,30 +72,30 @@ bool Fixed::operator!= ( const Fixed& fixed ) {
 }
 
 
-Fixed Fixed::operator+ ( const Fixed& fixed ) {
+Fixed Fixed::operator+ ( const Fixed& fixed ) const {
     Fixed result;
     result.FixedPoint = this->FixedPoint + fixed.FixedPoint;
+    // result.setRawBits(this->getRawBits() + fixed.getRawBits());
     return result;
 }
 
-Fixed Fixed::operator- ( const Fixed& fixed ) {
+Fixed Fixed::operator- ( const Fixed& fixed ) const {
     Fixed result;
     result.FixedPoint = this->FixedPoint - fixed.FixedPoint;
     return result;
 }
 
-Fixed Fixed::operator* ( const Fixed& fixed ) {
+Fixed Fixed::operator* ( const Fixed& fixed ) const {
     Fixed result;
     result.FixedPoint = (this->FixedPoint * fixed.FixedPoint) / (1 << this->FractionalBits);
     return result;
 }
 
-Fixed Fixed::operator/ ( const Fixed& fixed ) {
+Fixed Fixed::operator/ ( const Fixed& fixed ) const {
     
     Fixed result(0);
     if (fixed.FixedPoint != 0) {
-        result.FixedPoint = (this->FixedPoint * (1 << this->FractionalBits)) / fixed.FixedPoint;
-        // result.FixedPoint = (this->FixedPoint << this->FractionalBits) / fixed.FixedPoint;
+        result.FixedPoint = (this->FixedPoint << this->FractionalBits) / fixed.FixedPoint;
         return result;
     }
     return result;
@@ -129,7 +129,7 @@ std::ostream& operator<< ( std::ostream& os, const Fixed& fixed ) {
 }
 
 int Fixed::getRawBits( void ) const {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return this->FixedPoint;
 }
 

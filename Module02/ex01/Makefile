@@ -5,24 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/13 09:13:53 by aelkheta          #+#    #+#              #
-#    Updated: 2024/09/15 21:39:28 by aelkheta         ###   ########.fr        #
+#    Created: 2024/12/08 08:12:51 by aelkheta          #+#    #+#              #
+#    Updated: 2024/12/08 08:18:53 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++ -std=c++98
-CPP_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
-NAME = fixed
-SRC = main.cpp Fixed.cpp
-OBJ = $(SRC:.cpp=.o)
+CC := c++
+CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 # -g3 -fsanitize=address
+NAME := Fixed
+INCLUDE := -I./
+
+# SRC := main.cpp Fixed.cpp
+SRC := $(shell find . -name '*.cpp')
+OBJ := $(SRC:%.c=%.o)
 
 all: $(NAME)
 
 %.o: %.cpp
-	$(CC) $(CPP_FLAGS) -c $< -o $@
+	$(CC) $(CPP_FLAGS) $(INCLUDE) -c $^ -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(CPP_FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CPP_FLAGS) $(INCLUDE) $^ -o $@
 
 clean:
 	rm -f *.o
@@ -32,4 +35,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.SECONDARY:⏎   
