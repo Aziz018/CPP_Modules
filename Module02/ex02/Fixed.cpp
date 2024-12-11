@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 08:18:17 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/09 09:24:18 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:56:27 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ Fixed& Fixed::operator= ( const Fixed& fixedCopy ) {
     return *this;
 }
 
+// Relational operators:
 bool Fixed::operator> ( const Fixed& fixed ) {
     return this->FixedPoint > fixed.FixedPoint;
 }
@@ -71,7 +72,7 @@ bool Fixed::operator!= ( const Fixed& fixed ) {
     return this->FixedPoint != fixed.FixedPoint;
 }
 
-
+// Arithmetic operators:
 Fixed Fixed::operator+ ( const Fixed& fixed ) {
     Fixed result;
     result.FixedPoint = this->FixedPoint + fixed.FixedPoint;
@@ -101,6 +102,8 @@ Fixed Fixed::operator/ ( const Fixed& fixed ) {
     return result;
 }
 
+// Increment/Decrement operators:
+// The compiler distinguish between postfix and prefix with a dummy argument
 Fixed& Fixed::operator++ () {
     ++this->FixedPoint;
     return *this;

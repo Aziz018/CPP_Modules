@@ -17,11 +17,14 @@
       The header file: (.hpp/.h)                             the source file (.cpp)
     contains the class definition.                         contains the implementation.
 
-
-
 ## Ad-hoc Polymorphism
 
 - **Definition:** Ad-hoc polymorphism allows functions or operators to operate on arguments of different types, with specific implementations provided for each type. This is achieved through **function overloading** and **operator overloading**.
+
+<br/>
+
+- **or:** Ad-hoc polymorphism in C++ refers to the ability to define functions or operators that can operate on different types, where the behavior depends on the specific type of the arguments. It is implemented through function overloading and operator overloading.
+
 
 ### Function Overloading:
 
