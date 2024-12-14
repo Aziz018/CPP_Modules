@@ -5,36 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 01:54:52 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/09/16 04:40:34 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/12/12 17:26:01 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/12/13 16:53:02 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-# ifndef CLAP_TRAP_CPP
-# define CLAP_TRAP_CPP
 
 # include <iostream>
 
 class ClapTrap {
-private:
-    std::string Name;
-    unsigned int HitPoints;
-    unsigned int EnergyPoints;
-    unsigned int AttackDamage;
-public:
-    ClapTrap( const std::string& name );
-    ClapTrap( const ClapTrap &claptrap );
-    ClapTrap& operator= ( const ClapTrap& copy );
-    ~ClapTrap();
+    private:
+        std::string Name;   // represent the name of the ClapaTrap.
+        size_t HitPoints;      // represent the health of the ClapTrap.
+        size_t EnergyPoints;   // represent the energie of the ClapTrap.
+        size_t AttackDamage;
+    public:
+        ClapTrap();
+        ClapTrap(const std::string& name);
+        ClapTrap(const ClapTrap& claptrap);
+        ClapTrap& operator= (const ClapTrap& copy);
+        ~ClapTrap();
 
-    const std::string& getName() const;
-    const unsigned int& getHitPoints() const;
-    const unsigned int& getEnergyPoints() const;
-    const unsigned int& getAttackDamage() const;
-
-    void attack( const std::string& target );
-    void takeDamage( unsigned int amount );
-    void beRepaired( unsigned int amount );
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
 };
-
-# endif // CLAP_TRAP_CPP
