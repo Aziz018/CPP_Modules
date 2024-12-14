@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 17:26:03 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/14 09:56:44 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/12/14 09:43:55 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/12/14 09:57:53 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# ifndef FRAGTRAP_H
+# define FRAGTRAP_H
+
+# include <iostream>
 # include "ClapTrap.hpp"
-# include "ScavTrap.hpp"
-# include "FragTrap.hpp"
 
-int main() {
-    ScavTrap scavtrap1("aziz");
-    scavtrap1.attack("hamid");
-    
-    ScavTrap scavtrap(scavtrap1);
+class FragTrap : public ClapTrap
+{
+    private:
+    public:
+        FragTrap();
+        FragTrap( const std::string& name );
+        FragTrap( const FragTrap& fragtrap );
+        FragTrap& operator= ( const FragTrap& copy );
+        ~FragTrap();
+        void highFivesGuys(void);
+};
 
-    FragTrap fragtrap1("omar");
-    fragtrap1.attack("aziz");    
-
-    return 0;
-}
+# endif // FRAGTRAP_H
