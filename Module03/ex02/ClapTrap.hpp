@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 17:26:01 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/14 09:25:16 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/14 09:24:36 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 # include <iostream>
 
 class ClapTrap {
-    private:
-        std::string name;   // represent the name of the ClapaTrap.
-        size_t hitPoints;      // represent the health of the ClapTrap.
-        size_t energyPoints;   // represent the energie of the ClapTrap.
+    protected:
+        std::string name;       // represent the name of the ClapTrap.
+        size_t hitPoints;       // represent the health of the ClapTrap.
+        size_t energyPoints;    // represent the energy of the ClapTrap.
         size_t attackDamage;
     public:
         ClapTrap();
