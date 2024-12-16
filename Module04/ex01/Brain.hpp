@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:38:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/16 11:01:05 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:47:51 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 # include <iostream>
 
 class Brain {
-    private:
-        std::string ideas[B_NUM];
     public:
+        std::string ideas[B_NUM];
         Brain();
         Brain( const Brain& brain );
         ~Brain();

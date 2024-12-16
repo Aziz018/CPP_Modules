@@ -6,13 +6,12 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:24:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/16 09:44:46 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:56:33 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
 # include "Animal.hpp"
-# include "WrongAnimal.hpp"
 
 int main()
 {
@@ -25,5 +24,9 @@ int main()
     j->makeSound(); // will output the dog sound!
     meta->makeSound();
     
+    delete i;
+    delete j;
+    delete meta;
+
     return 0;
 }

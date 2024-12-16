@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:25:39 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/16 09:41:00 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:54:28 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ const std::string& Animal::getType() const {
     return this->type;
 }
 
-Dog::Dog() {
+Dog::Dog() : brain(new Brain) {
+    this->type = "Dog";
     std::cout << "Dog default constructor was called." << std::endl;
 }
 Dog::Dog( const Dog& dog ) {
@@ -51,13 +52,15 @@ Dog& Dog::operator= ( const Dog& copy ) {
     return *this;
 }
 Dog::~Dog() {
+    delete brain;
     std::cout << "Dog destructor was called." << std::endl;
 }
 void Dog::makeSound() const {
     std::cout << "Dog bark 🐶🐶" << std::endl;
 }
 
-Cat::Cat() {
+Cat::Cat() : brain(new Brain) {
+    this->type = "Cat";
     std::cout << "Cat default constructor was called." << std::endl;
 }
 Cat::Cat( const Cat& cat ) {
@@ -71,6 +74,7 @@ Cat& Cat::operator= ( const Cat& copy ) {
     return *this;
 }
 Cat::~Cat() {
+    delete brain;
     std::cout << "Cat destructor was called." << std::endl;
 }
 void Cat::makeSound() const {
