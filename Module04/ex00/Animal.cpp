@@ -6,12 +6,11 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:25:39 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/16 09:17:55 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/16 09:41:00 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Animal.hpp"
-
 
 Animal::Animal() {
     std::cout << "Animal default constructor was called." << std::endl;
