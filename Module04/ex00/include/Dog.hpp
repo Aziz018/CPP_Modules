@@ -1,35 +1,30 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:24:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/17 11:48:23 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:05:31 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <Animal.hpp>
-# include <Cat.hpp>
-# include <Dog.hpp>
-# include <WrongAnimal.hpp>
+#ifndef DOG_HPP
+#define DOG_HPP
 
-int main()
-{
-    // const Animal* meta = new Animal();
-    // const Animal* j = new Dog();
-    const WrongAnimal* i = new WrongCat(); 
+#include "Animal.hpp"
 
-    // std::cout << j->getType() << std::endl;
-    std::cout << i->getType() << std::endl;
-    i->makeSound(); // will output the cat sound!
-    // j->makeSound(); // will output the dog sound!
-    // meta->makeSound();
-    
-    delete i;
-    // delete j;
-    // delete meta;
+class Dog : public Animal {
+public:
+    Dog();
+    Dog(const Dog &dog);
+    Dog &operator=(const Dog &copy);
+    ~Dog();
 
-    return 0;
-}
+    const std::string& getType() const;
+    void makeSound() const;
+};
+
+#endif

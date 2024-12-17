@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:39:35 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/16 09:40:37 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:53:45 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ class WrongAnimal {
         WrongAnimal();
         WrongAnimal( const WrongAnimal& animal );
         WrongAnimal& operator= ( const WrongAnimal& copy );
-        ~WrongAnimal();
-        const  std::string& getType() const;
+        virtual ~WrongAnimal();
+
+        const std::string& getType() const;
         void makeSound() const;
 };
 
@@ -34,6 +35,7 @@ class WrongCat : public WrongAnimal {
         WrongCat& operator= ( const WrongCat& copy );
         ~WrongCat();
 
+        const  std::string& getType() const;
         void makeSound() const;
 };
 
