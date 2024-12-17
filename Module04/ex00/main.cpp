@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:24:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/17 12:00:13 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:20:15 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ int main()
 
     std::cout << j->getType() << std::endl;
     std::cout << i->getType() << std::endl;
+
+    std::cout << std::endl;
+
     i->makeSound(); // will output the cat sound!
     j->makeSound(); // will output the dog sound!
     meta->makeSound();
