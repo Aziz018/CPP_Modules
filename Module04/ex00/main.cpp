@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:24:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/17 11:58:02 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:00:13 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
     const WrongAnimal* wrong = new WrongCat();
     std::cout << wrong->getType() << std::endl;
     wrong->makeSound();
+    delete wrong;
 
     std::cout << std::endl;
 
