@@ -1,0 +1,8 @@
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "normal",
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}
