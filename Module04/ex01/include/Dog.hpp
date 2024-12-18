@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 08:51:09 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/16 20:27:28 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/12/17 14:26:08 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/12/17 14:27:15 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+# ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
+# include "Animal.hpp"
 # include "Brain.hpp"
-
-class Animal {
-    protected:
-        std::string type;
-    public:
-        Animal();
-        Animal( const Animal& animal );
-        Animal& operator= ( const Animal& copy );
-        virtual ~Animal();
-        const  std::string& getType() const;
-        virtual void makeSound() const;
-};
 
 class Dog : public Animal {
     private:
@@ -40,16 +28,4 @@ class Dog : public Animal {
         void makeSound() const;
 };
 
-class Cat : public Animal {
-    private:
-        Brain* brain;
-    public:
-        Cat();
-        Cat( const Cat& cat );
-        Cat& operator= ( const Cat& copy );
-        ~Cat();
-
-        void makeSound() const;
-};
-
-# endif // ANIMAL_HPP
+# endif // DOG_HPP

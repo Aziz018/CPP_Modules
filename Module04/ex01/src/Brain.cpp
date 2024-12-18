@@ -6,11 +6,11 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:38:29 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/16 12:32:46 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:43:09 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Brain.hpp"
+# include <Brain.hpp>
 
 Brain::Brain() {
     std::cout << "Brain default constructor was called" << std::endl;

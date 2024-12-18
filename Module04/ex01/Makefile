@@ -6,13 +6,14 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:05 by aelkheta          #+#    #+#              #
-#    Updated: 2024/12/16 09:18:24 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/12/17 14:40:53 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
-CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Animal
+CC := c++
+CPP_FLAGS := -Wall -Wextra -Werror -std=c++98
+NAME := Animal
+INCLUDE := -I ./include
 
 SRC := $(shell find . -name '*.cpp')
 OBJ := $(SRC:%.cpp=%.o)
@@ -20,15 +21,15 @@ OBJ := $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 %.o: %.cpp
-	@$(CC) $(CPP_FLAGS) -c $^ -o $@
+	@$(CC) $(CPP_FLAGS) $(INCLUDE) -c $^ -o $@
 	@echo "Compiling ..."
 
 $(NAME): $(OBJ)
-	@$(CC) $(CPP_FLAGS) $^ -o $@
+	@$(CC) $(CPP_FLAGS) $(INCLUDE) $^ -o $@
 	@echo "Compiling ..."
 
 clean:
-	@rm -f *.o
+	@rm -f *.o ./src/*.o
 	@echo "Cleaning ..."
 
 fclean: clean

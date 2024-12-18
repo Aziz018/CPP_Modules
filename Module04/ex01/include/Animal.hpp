@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 10:38:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/16 19:47:51 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/12/16 08:51:09 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/12/17 14:44:18 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef BRAIN_HPP
-# define BRAIN_HPP
-
-# define B_NUM 100
+# ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
+# include "Brain.hpp"
 
-class Brain {
+class Animal {
+    protected:
+        std::string type;
     public:
-        std::string ideas[B_NUM];
-        Brain();
-        Brain( const Brain& brain );
-        ~Brain();
-        
-        Brain& operator= ( const Brain& copy );
+        Animal();
+        Animal( const Animal& animal );
+        Animal& operator= ( const Animal& copy );
+        virtual ~Animal();
+        const  std::string& getType() const;
+        virtual void makeSound() const;
 };
 
-# endif // BRAIN_HPP
+# endif // ANIMAL_HPP
