@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 09:43:57 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/14 09:55:36 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/20 18:49:05 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ FragTrap& FragTrap::operator= (const FragTrap& copy) {
 FragTrap::FragTrap( const FragTrap& fragtrap ) : ClapTrap(fragtrap) {
     std::cout << "FragTrap copy constructor was called." << std::endl;
     *this = fragtrap;
+}
+
+void FragTrap::attack(const std::string& target) {
+    if (this->energyPoints == 0 || this->hitPoints == 0) {
+        std::cout << "FragTrap " << this->name << " can not attacks." << std::endl;
+        return ;
+    }
+    this->energyPoints -= 1;
+    std::cout << "FragTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!" << std::endl;
 }
 
 FragTrap::~FragTrap() {

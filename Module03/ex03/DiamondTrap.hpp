@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 17:25:50 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/15 09:20:19 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/20 18:57:27 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class DiamondTrap : public FragTrap, public ScavTrap {
         DiamondTrap();
         DiamondTrap( const DiamondTrap& diamondtrap );
         DiamondTrap( const std::string& name );
+        void attack(const std::string& target);
         ~DiamondTrap();
         void whoAmI();
 };

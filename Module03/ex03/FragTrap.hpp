@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 09:43:55 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/14 18:34:35 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/20 18:53:09 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class FragTrap : virtual public ClapTrap
         FragTrap( const std::string& name );
         FragTrap( const FragTrap& fragtrap );
         FragTrap& operator= ( const FragTrap& copy );
+        void attack(const std::string& target);
         ~FragTrap();
         void highFivesGuys(void);
 };

@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:10:28 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/14 09:54:35 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/20 18:52:43 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ ScavTrap& ScavTrap::operator= (const ScavTrap& copy) {
         this->attackDamage = copy.attackDamage;
     }
     return *this;
+}
+
+void ScavTrap::attack(const std::string& target) {
+    if (this->energyPoints == 0 || this->hitPoints == 0) {
+        std::cout << "ScavTrap " << this->name << " can not attacks." << std::endl;
+        return ;
+    }
+    this->energyPoints -= 1;
+    std::cout << "ScavTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!" << std::endl;
 }
 
 ScavTrap::~ScavTrap() {

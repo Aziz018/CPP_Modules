@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:10:31 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/14 18:34:43 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/20 18:53:19 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ public:
     ScavTrap( const std::string& name );
     ScavTrap( const ScavTrap& scavtrap );
     ScavTrap& operator= (const ScavTrap& copy);
+    void attack(const std::string& target);
     ~ScavTrap();
-
     void guardGate();
 };
 
