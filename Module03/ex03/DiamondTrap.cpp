@@ -6,13 +6,18 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 17:25:53 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/20 19:02:54 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/20 19:49:51 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() {
+DiamondTrap::DiamondTrap() : ClapTrap() {
+    this->name = "Unknown";
+    this->hitPoints = FragTrap::hitPoints;
+    this->energyPoints = ScavTrap::energyPoints;
+    this->attackDamage = FragTrap::attackDamage;
+	std::cout << "DiamondTrap: " << this->name << " is created" << std::endl;
     std::cout << "DiamondTrap default constructed was called" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 09:43:57 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/20 18:49:05 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/20 19:58:26 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 FragTrap::FragTrap() : ClapTrap() {
     std::cout << "FragTrap default constructor was called." << std::endl;
+    this->hitPoints = 100;
+    this->energyPoints = 100;
+    this->attackDamage = 30;
 }
 
 FragTrap::FragTrap( const std::string& name ) : ClapTrap(name) {
