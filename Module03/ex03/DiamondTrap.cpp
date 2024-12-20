@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 17:25:53 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/20 18:58:45 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/20 19:02:54 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ DiamondTrap::DiamondTrap() {
     std::cout << "DiamondTrap default constructed was called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const DiamondTrap& diamondtrap ) {
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), FragTrap(other) ,ScavTrap(other) {
     std::cout << "DiamondTrap copy constructed was called" << std::endl;
 }
 
@@ -35,5 +35,6 @@ DiamondTrap::~DiamondTrap() {
 }
 
 void DiamondTrap::whoAmI() {
-    std::cout << "DiamondTrap name: " << this->name << ", ClapTrap name: " << ClapTrap::name;
+    std::cout << "DiamondTrap name: " << this->name 
+              << ", ClapTrap name: " << ClapTrap::name;
 }
