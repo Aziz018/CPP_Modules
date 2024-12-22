@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:24:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/17 15:58:26 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/22 11:18:15 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,16 @@ int main()
     //     delete animals[i];
     // }
 
-    const Animal* j = new Dog();
     const Animal* i = new Cat();
+    // const Animal* j = new Dog();
 
-    std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
+    // std::cout << j->getType() << " " << std::endl;
     i->makeSound(); // will output the cat sound!
-    j->makeSound(); // will output the dog sound!
+    // j->makeSound(); // will output the dog sound!
     
     delete i;
-    delete j;
+    // delete j;
 
     return 0;
 }

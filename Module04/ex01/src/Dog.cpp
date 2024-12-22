@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 14:25:33 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/17 14:42:25 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/12/17 11:14:40 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/12/22 11:09:17 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <Dog.hpp>
 
-Dog::Dog() : brain(new Brain) {
+Dog::Dog() : Animal() {
     this->type = "Dog";
     std::cout << "Dog default constructor was called." << std::endl;
 }
@@ -30,10 +30,13 @@ Dog& Dog::operator= ( const Dog& copy ) {
 }
 
 Dog::~Dog() {
-    delete brain;
     std::cout << "Dog destructor was called." << std::endl;
 }
 
 void Dog::makeSound() const {
     std::cout << "Dog bark 🐶🐶" << std::endl;
+}
+
+const std::string& Dog::getType() const {
+    return this->type;
 }
