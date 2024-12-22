@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:39:12 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/17 11:55:07 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/22 11:00:50 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,28 +38,4 @@ void WrongAnimal::makeSound() const {
 
 const std::string& WrongAnimal::getType() const {
     return this->type;
-}
-
-WrongCat::WrongCat() {
-    std::cout << "WrongCat default constructor was called." << std::endl;
-}
-
-WrongCat::WrongCat( const WrongCat& cat ) : WrongAnimal(cat) {
-    this->type = cat.type;
-    std::cout << "WrongCat copy constructor was called." << std::endl;
-}
-
-WrongCat& WrongCat::operator= ( const WrongCat& copy ) {
-    if (this != &copy) {
-        this->type = copy.type;
-    }
-    return *this;
-}
-
-WrongCat::~WrongCat() {
-    std::cout << "WrongCat destructor was called." << std::endl;
-}
-
-void WrongCat::makeSound() const {
-    std::cout << "WrongCat Meows 🐱🐱" << std::endl;
 }

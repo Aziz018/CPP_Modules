@@ -22,7 +22,6 @@ public:
     Cat(const Cat& cat);
     Cat& operator=(const Cat& copy);
     ~Cat();
-
     const std::string& getType() const;
     void makeSound() const;
 };

@@ -6,13 +6,13 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:25:39 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/17 11:14:23 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/22 09:44:10 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Animal.hpp"
 
-Animal::Animal() : type("Animal") {
+Animal::Animal() : type("Undefined") {
     std::cout << "Animal default constructor was called." << std::endl;
 }
 

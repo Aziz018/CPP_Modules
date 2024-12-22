@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:24:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/17 13:20:15 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/22 11:03:13 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # include <Cat.hpp>
 # include <Dog.hpp>
 # include <WrongAnimal.hpp>
+# include <WrongCat.hpp>
 
 int main()
 {
@@ -35,9 +36,9 @@ int main()
 
     std::cout << std::endl;
 
-    i->makeSound(); // will output the cat sound!
-    j->makeSound(); // will output the dog sound!
-    meta->makeSound();
+    i->makeSound();     // will output the cat sound!
+    j->makeSound();     // will output the dog sound!
+    meta->makeSound();  // will output the animal sound!
     
     delete meta;
     delete i;
