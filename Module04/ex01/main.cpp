@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:24:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/22 11:18:15 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/22 12:45:04 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ int main()
     //     animals[i] = new Cat();
     // }
 
+    const Animal* i = new Cat();
+    const Animal* j = new Dog();
+
+    std::cout << i->getType() << " " << std::endl;
+    std::cout << j->getType() << " " << std::endl;
+    i->makeSound(); // will output the cat sound!
+    j->makeSound(); // will output the dog sound!
+    
+    delete i;
+    delete j;
+
     // for (int i = 0; i < ARRAY_SIZE; i++) {
     //     delete animals[i];
     // }
-
-    const Animal* i = new Cat();
-    // const Animal* j = new Dog();
-
-    std::cout << i->getType() << " " << std::endl;
-    // std::cout << j->getType() << " " << std::endl;
-    i->makeSound(); // will output the cat sound!
-    // j->makeSound(); // will output the dog sound!
-    
-    delete i;
-    // delete j;
 
     return 0;
 }
