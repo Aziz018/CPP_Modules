@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 11:01:18 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/22 11:01:36 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/23 06:39:53 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void WrongCat::makeSound() const {
     std::cout << "WrongCat Meows 🐱🐱" << std::endl;
 }
 
-const std::string& WrongCat::getType() const {
-    return this->type;
-}
+// const std::string& WrongCat::getType() const {
+//     return this->type;
+// }

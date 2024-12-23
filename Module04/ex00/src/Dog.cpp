@@ -6,11 +6,11 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:14:40 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/17 11:14:48 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/23 06:38:17 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Dog.hpp"
+# include <Dog.hpp>
 
 Dog::Dog() : Animal() {
     this->type = "Dog";
@@ -37,6 +37,6 @@ void Dog::makeSound() const {
     std::cout << "Dog bark 🐶🐶" << std::endl;
 }
 
-const std::string& Dog::getType() const {
-    return this->type;
-}
+// const std::string& Dog::getType() const {
+//     return this->type;
+// }

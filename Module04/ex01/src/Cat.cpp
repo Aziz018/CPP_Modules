@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:58 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/22 12:43:13 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/23 06:41:37 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ void Cat::makeSound() const {
     std::cout << "Cat Meows 🐱🐱" << std::endl;
 }
 
-const std::string& Cat::getType() const {
-    return this->type;
-}
+// const std::string& Cat::getType() const {
+//     return this->type;
+// }

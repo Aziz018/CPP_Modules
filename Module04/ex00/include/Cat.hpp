@@ -14,16 +14,16 @@
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include <Animal.hpp>
 
 class Cat : public Animal {
-public:
-    Cat();
-    Cat(const Cat& cat);
-    Cat& operator=(const Cat& copy);
-    ~Cat();
-    const std::string& getType() const;
-    void makeSound() const;
+    public:
+        Cat();
+        Cat(const Cat& cat);
+        Cat& operator=(const Cat& copy);
+        ~Cat();
+        void makeSound() const;
+        // const std::string& getType() const;
 };
 
 #endif
