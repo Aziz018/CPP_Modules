@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:58 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/23 06:38:12 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/23 09:52:44 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ Cat::Cat() : Animal() {
 }
 
 Cat::Cat( const Cat& cat ) : Animal(cat) {
-    this->type = cat.type;
+    // this->type = cat.type;
     std::cout << "Cat copy constructor was called." << std::endl;
 }
 
 Cat& Cat::operator= ( const Cat& copy ) {
     if (this != &copy) {
-        this->type = copy.type;
+        // this->type = copy.type;
+        this->Animal::operator=(copy);
     }
     return *this;
 }

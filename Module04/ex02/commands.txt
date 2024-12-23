@@ -1,0 +1,2 @@
+find . -type f -name "*.hpp" -exec mv {} ./include/ \;
+touch main.{cpp,hpp}

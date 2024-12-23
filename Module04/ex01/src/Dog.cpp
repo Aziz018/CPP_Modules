@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:14:40 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/23 06:41:41 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/23 09:45:54 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,24 @@ Dog::Dog() : Animal(), brain(new Brain()) {
 }
 
 Dog::Dog( const Dog& dog ) : Animal(dog), brain(new Brain(*(dog.brain))) {
-    this->type = dog.type;
+    // this->type = dog.type;
     std::cout << "Dog copy constructor was called." << std::endl;
 }
 
 Dog& Dog::operator= ( const Dog& copy ) {
     if (this != &copy) {
         this->Animal::operator=(copy);
-        *(this->brain) = *(copy.brain);
-        this->type = copy.type;
+        delete this->brain;
+        brain = new Brain(*(copy.brain)); // to do
+
+        // *(this->brain) = *(copy.brain);
+        // this->type = copy.type;
     }
     return *this;
 }
 
 Dog::~Dog() {
-    delete brain;
+    delete this->brain;
     std::cout << "Dog destructor was called." << std::endl;
 }
 
