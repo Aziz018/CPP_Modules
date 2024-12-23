@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 09:43:55 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/20 18:53:09 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/22 20:05:46 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 class FragTrap : virtual public ClapTrap
 {
-    private:
     public:
         FragTrap();
         FragTrap( const std::string& name );
