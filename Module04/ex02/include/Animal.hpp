@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 08:51:09 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/22 11:15:53 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/23 09:59:47 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Animal {
         Animal();                                   // default constructor.
         Animal( const Animal& animal );             // copy constructor.
         Animal& operator= ( const Animal& copy );   // copy assignment op.
-        virtual ~Animal();                          // destructor.
+        virtual ~Animal() = 0;                      // destructor.
         const std::string& getType() const;         // getter for the 'type' attribute.
         virtual void makeSound() const;             // makeSound method.
 };

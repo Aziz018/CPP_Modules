@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:14:40 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/23 09:45:54 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/23 09:57:52 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ void Dog::makeSound() const {
     std::cout << "Dog bark 🐶🐶" << std::endl;
 }
 
-// const std::string& Dog::getType() const {
-//     return this->type;
-// }
+const std::string& Dog::getType() const {
+    return this->type;
+}
