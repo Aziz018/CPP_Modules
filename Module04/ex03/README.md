@@ -116,3 +116,11 @@ int main() {
 | Instantiation |	Can create objects of the base class |	Cannot create objects of the base class |
 | Purpose |	Enables dynamic polymorphism |	Defines an interface and enforces implementation in derived classes |
 
+
+## I want to change extenstion
+
+```bash
+for file in *.extension; do
+    mv "$file" "${file%.extension}.new_extension"
+done
+```

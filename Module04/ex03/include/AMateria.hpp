@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 10:15:44 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/23 20:20:27 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/12/25 09:18:44 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/12/25 13:28:32 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,18 @@
 # define AMATERIA_HPP
 
 # include <iostream>
-
-class IMateriaSource {
-    public:
-        virtual ~IMateriaSource() {}
-        virtual void learnMateria(AMateria*) = 0;
-        virtual AMateria* createMateria(std::string const & type) = 0;
-};
-
-class ICharacter {
-    public:
-        virtual ~ICharacter() {}
-        virtual std::string const & getName() const = 0;
-        virtual void equip(AMateria* m) = 0;
-        virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter& target) = 0;
-};
+# include <ICharacter.hpp>
 
 class AMateria {
     protected:
-        std::string type;
+        std::string type; // type of the AMateria
     public:
-        AMateria();
-        AMateria(std::string const &type);
+        AMateria(); // default constructor of AMateria
+        AMateria(std::string const &type); // param constructor of AMateria
         std::string const & getType() const; //Returns the materia type
-        virtual AMateria* clone() const = 0;
-        virtual void use(ICharacter& target);
+        virtual AMateria* clone() const = 0; // pure vitual func have no body
+        virtual void use(ICharacter& target) = 0; // i don't fucking know, i think it attack a target??
+        virtual ~AMateria();
 };
 
-#endif // AMATERIA_HPP
+# endif // AMATERIA_HPP

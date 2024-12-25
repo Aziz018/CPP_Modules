@@ -6,13 +6,16 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 10:15:46 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/24 10:01:41 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/25 13:46:04 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <Character.hpp>
 # include <AMateria.hpp>
+# include <Cure.hpp>
+# include <Ice.hpp>
 
-AMateria::AMateria() {
+AMateria::AMateria() : type("Undefined") {
     std::cout << "AMateria default constructor called." << std::endl;
 }
 
@@ -20,12 +23,12 @@ AMateria::AMateria(std::string const &type) : type(type) {
     std::cout << "AMateria param constructor called." << std::endl;
 }
 
-std::string const& AMateria::getType() const { //Returns the materia type
+/// @brief AMateria methode member function.
+/// @return the type of the AMateria.
+std::string const& AMateria::getType() const {
     return this->type;
 }
 
-// virtual AMateria* clone() const = 0;
-
-void AMateria::use(ICharacter& target) {
-    
+AMateria::~AMateria() {
+    std::cout << "AMateria destructor called." << std::endl;
 }

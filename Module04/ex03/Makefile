@@ -6,12 +6,12 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:05 by aelkheta          #+#    #+#              #
-#    Updated: 2024/12/23 20:18:56 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/12/25 13:35:31 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++
-CPP_FLAGS := -Wall -Wextra -Werror -std=c++98
+CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 -g3
 NAME := AMateria
 INCLUDE := -I ./include
 
