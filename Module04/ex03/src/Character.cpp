@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:24:55 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 13:46:14 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/25 14:24:18 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@
 
 Character::Character() : _name("Undefined") {
     for (int i = 0; i < 4; i++) {
+        this->_saved[i] = NULL;
         this->_slotes[i] = NULL;
     }
-    std::cout << "Character default constructor called" << std::endl;
+    // std::cout << "Character default constructor called" << std::endl;
 }
 
 Character::Character(const std::string& name) : _name(name) {
     for (int i = 0; i < 4; i++) {
+        this->_saved[i] = NULL;
         this->_slotes[i] = NULL;
     }
-    std::cout << "Character param constructor called" << std::endl;
+    // std::cout << "Character param constructor called" << std::endl;
 }
 
 Character::Character(const Character& character) : _name(character._name) {
@@ -36,8 +38,9 @@ Character::Character(const Character& character) : _name(character._name) {
         else {
             this->_slotes[i] = NULL;
         }
+        this->_saved[i] = NULL;
     }
-    std::cout << "Character copy constructor called" << std::endl;
+    // std::cout << "Character copy constructor called" << std::endl;
 }
 
 Character Character::operator= (const Character& copy) {
@@ -70,23 +73,31 @@ void Character::equip(AMateria* m) {
             return ;
         }
     }
+    delete m;
+    std::cout << "Character is full" << std::endl;
 }
 
 void Character::unequip(int idx) {
     if (idx >= 0 && idx <= 3) {
+        this->_saved[idx] = this->_slotes[idx];
         this->_slotes[idx] = NULL;
     }
+    std::cout << "Character slot is empty" << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target) {
     if (idx >= 0 && idx <= 3 && this->_slotes[idx]) {
         this->_slotes[idx]->use(target);
     }
+    else {
+        std::cout << "Character slot is empty or ivalid index" << std::endl;
+    }
 }
 
 Character::~Character() {
     for (int i = 0; i < 4; i++) {
         delete this->_slotes[i];
+        delete this->_saved[i];
     }
-    std::cout << "Character destructor called" << std::endl;
+    // std::cout << "Character destructor called" << std::endl;
 } // destructor

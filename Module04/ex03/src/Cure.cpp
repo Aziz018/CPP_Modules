@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:24:42 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 13:46:18 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/25 14:06:04 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 // Cure concrete class implementation:
 Cure::Cure() : AMateria("cure") {
-    std::cout << "Cure default constructor called" << std::endl;
+    // std::cout << "Cure default constructor called" << std::endl;
 }
 
 Cure::Cure( std::string const& type) : AMateria(type) {
-    std::cout << "Cure param constructor called" << std::endl;
+    // std::cout << "Cure param constructor called" << std::endl;
 }
 
 void Cure::use(ICharacter& target) {
@@ -30,5 +30,5 @@ AMateria* Cure::clone() const {
 }
 
 Cure::~Cure() {
-    std::cout << "Cure destructor called" << std::endl;
+    // std::cout << "Cure destructor called" << std::endl;
 }

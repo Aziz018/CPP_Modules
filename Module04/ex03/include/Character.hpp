@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:24:55 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 10:54:17 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/25 14:21:36 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class Character : public ICharacter {
     private:
         std::string _name;
+        AMateria *_saved[4];
         AMateria *_slotes[4];
     public:
         Character();
