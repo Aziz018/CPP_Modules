@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 10:15:46 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 14:05:49 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/26 09:16:32 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,18 @@ AMateria::AMateria() : type("Undefined") {
 
 AMateria::AMateria(std::string const &type) : type(type) {
     // std::cout << "AMateria param constructor called." << std::endl;
+}
+
+AMateria::AMateria(const AMateria &amateria) {
+    this->type = amateria.type;
+    // std::cout << "AMateria copy constructor called." << std::endl;
+}
+
+AMateria& AMateria::operator= (const AMateria &copy) {
+    if (this != &copy) {
+        this->type = copy.getType();
+    }
+    return *this;
 }
 
 /// @brief AMateria methode member function.

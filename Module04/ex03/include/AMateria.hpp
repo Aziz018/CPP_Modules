@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:18:44 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 13:28:32 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/26 09:10:10 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class AMateria {
     public:
         AMateria(); // default constructor of AMateria
         AMateria(std::string const &type); // param constructor of AMateria
+        AMateria(const AMateria &amateria);
+        AMateria& operator= (const AMateria & copy);
         std::string const & getType() const; //Returns the materia type
         virtual AMateria* clone() const = 0; // pure vitual func have no body
         virtual void use(ICharacter& target) = 0; // i don't fucking know, i think it attack a target??

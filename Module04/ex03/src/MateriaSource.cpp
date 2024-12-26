@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:25:38 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/26 08:24:52 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/26 16:35:51 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,31 @@ MateriaSource::MateriaSource() {
         this->_materia[i] = NULL;
     }
     // std::cout << "MateriaSource default constructor called" << std::endl;
+}
+
+MateriaSource::MateriaSource(const MateriaSource& materia_source) {
+    for (int i = 0; i < 4; i++) {
+        if (materia_source._materia[i]) {
+            this->_materia[i] = materia_source._materia[i]->clone();
+        }
+        else {
+            this->_materia[i] = NULL;
+        }
+    }
+    // std::cout << "MateriaSource copy constructor called" << std::endl;
+}
+
+MateriaSource MateriaSource::operator= (const MateriaSource& copy) {
+    if (this != &copy) {
+        for (int i = 0; i < 4; i++) {
+            if (copy._materia[i]) {
+                this->_materia[i] = copy._materia[i]->clone();
+            }
+            else {
+                this->_materia[i] = NULL;
+            }
+        }
+    }
 }
 
 void MateriaSource::learnMateria(AMateria* m) {
