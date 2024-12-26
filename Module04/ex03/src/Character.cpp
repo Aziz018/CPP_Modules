@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:24:55 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 14:24:18 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/26 08:29:03 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,12 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-    if (idx >= 0 && idx <= 3) {
+    if (idx >= 0 && idx <= 3 && this->_slotes[idx]) {
         this->_saved[idx] = this->_slotes[idx];
         this->_slotes[idx] = NULL;
+        return ;
     }
-    std::cout << "Character slot is empty" << std::endl;
+    std::cout << "Character slot is empty or invalid index" << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target) {

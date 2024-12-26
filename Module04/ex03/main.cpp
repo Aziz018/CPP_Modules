@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:24:32 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 14:24:58 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/26 08:28:31 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@ int main()
 {
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
+
+    ICharacter* me = new Character("me");
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
+
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+
     src->learnMateria(new Cure());
     src->learnMateria(new Cure());
     src->learnMateria(new Cure());
@@ -27,12 +36,6 @@ int main()
     src->learnMateria(new Cure());
     src->learnMateria(new Cure());
 
-    ICharacter* me = new Character("me");
-    AMateria* tmp;
-    tmp = src->createMateria("ice");
-    me->equip(tmp);
-    tmp = src->createMateria("cure");
-    me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
     tmp = src->createMateria("cure");
@@ -50,6 +53,7 @@ int main()
     me->use(0, *bob);
     me->use(1, *bob);
 
+    me->unequip(0);
     me->unequip(0);
 
     delete bob;

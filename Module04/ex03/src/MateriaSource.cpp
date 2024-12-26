@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:25:38 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 14:08:10 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/26 08:24:52 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void MateriaSource::learnMateria(AMateria* m) {
     for (int i = 0; i < 4; i++) {
         if (this->_materia[i] == NULL) {
             this->_materia[i] = m;
+            std::cout << "Materia " << m->getType() << " have learned" << std::endl;
             return ;
         }
     }
@@ -38,7 +39,7 @@ AMateria* MateriaSource::createMateria(std::string const &type) {
             return this->_materia[i]->clone();
         }
     }
-    std::cout << "MateriaSource does not have this type of materia" << std::endl;
+    std::cout << "MateriaSource does not have this type of materia " << "(" << type << ")" << std::endl;
     return NULL;
 }
 
