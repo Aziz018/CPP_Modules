@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   vtable_inspect.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta < aelkheta@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/25 09:24:42 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/29 13:45:39 by aelkheta         ###   ########.fr       */
+/*   Created: 2024/12/28 11:02:15 by aelkheta          #+#    #+#             */
+/*   Updated: 2024/12/28 13:17:42 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef CURE_HPP
-# define CURE_HPP
+#include <iostream>
 
-# include <ICharacter.hpp>
-# include <AMateria.hpp>
-
-class Cure : public AMateria {
+class Base {
     public:
-        Cure();
-        Cure(const Cure& cure);
-        Cure operator= (const Cure& copy);
-        virtual void use(ICharacter& target);
-        Cure( std::string const& type);
-        AMateria* clone() const;
-        ~Cure();
+        virtual void foo() { std::cout << "Base::foo()" << std::endl; }
+        virtual ~Base() {}
 };
 
-# endif // CURE_HPP
+class Derived : public Base {
+    public:
+        void foo() { std::cout << "Derived::foo()" << std::endl; }
+};
+
+int main() {
+    Base* obj = new Derived();
+    obj->foo();
+    delete obj;
+    return 0;
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelkheta < aelkheta@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:14:40 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/23 09:57:52 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/29 13:43:50 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ Dog& Dog::operator= ( const Dog& copy ) {
     if (this != &copy) {
         this->Animal::operator=(copy);
         delete this->brain;
-        brain = new Brain(*(copy.brain)); // to do
-
+        brain = new Brain(*(copy.brain));
         // *(this->brain) = *(copy.brain);
         // this->type = copy.type;
     }

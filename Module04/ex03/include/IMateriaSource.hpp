@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelkheta < aelkheta@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:20:15 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 13:38:50 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/29 13:39:06 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 class IMateriaSource {
     public:
-        virtual void learnMateria(AMateria*) = 0; // pure vitual func have no body
-        virtual AMateria* createMateria(std::string const & type) = 0; // pure vitual func have no body
-        virtual ~IMateriaSource() = 0; // pure vitual destructor
+        virtual void learnMateria(AMateria*) = 0;
+        virtual AMateria* createMateria(std::string const & type) = 0;
+        virtual ~IMateriaSource() = 0;
 };
 
 # endif // IMATERIA_SOURCE_HPP

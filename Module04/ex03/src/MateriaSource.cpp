@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelkheta < aelkheta@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:25:38 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/26 16:35:51 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/29 13:32:21 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ MateriaSource MateriaSource::operator= (const MateriaSource& copy) {
             }
         }
     }
+    return *this;
 }
 
 void MateriaSource::learnMateria(AMateria* m) {

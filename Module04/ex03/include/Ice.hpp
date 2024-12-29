@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelkheta < aelkheta@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:24:28 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/26 16:25:27 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/29 13:34:30 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Ice : public AMateria {
         Ice();
         Ice(const Ice& ice);
         Ice operator= (const Ice& copy);
-        void use(ICharacter& target); // i don't fucking know, i think it attack a target??
+        void use(ICharacter& target);
         Ice( std::string const& type);
         AMateria* clone() const;
         ~Ice();

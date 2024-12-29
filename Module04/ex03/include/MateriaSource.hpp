@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelkheta < aelkheta@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:25:38 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/26 16:31:20 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/29 13:41:56 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class MateriaSource : public IMateriaSource {
         MateriaSource operator= (const MateriaSource& copy);
         void learnMateria(AMateria* m);
         AMateria* createMateria(std::string const &type);
-        ~MateriaSource(); // destructor
+        ~MateriaSource();
 };
 
 # endif // MATERIA_SOURCE_HPP
