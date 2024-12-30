@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:58 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/23 09:57:48 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/30 08:24:27 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ Cat& Cat::operator= ( const Cat& copy ) {
     if (this != &copy) {
         this->Animal::operator=(copy);
         delete this->brain;
-        brain = new Brain(*(copy.brain));
-
+        brain = new Brain(*(copy.brain)); 
         // (*this->brain) = (*copy.brain);
         // this->type = copy.type;
     }
@@ -43,6 +42,6 @@ void Cat::makeSound() const {
     std::cout << "Cat Meows 🐱🐱" << std::endl;
 }
 
-const std::string& Cat::getType() const {
-    return this->type;
-}
+// const std::string& Cat::getType() const {
+//     return this->type;
+// }

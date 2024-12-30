@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:24:55 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/25 14:21:36 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/30 09:16:27 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Character : public ICharacter {
     private:
         std::string _name;
-        AMateria *_saved[4];
         AMateria *_slotes[4];
+        AMateria *_saved[4];
     public:
         Character();
         Character(const std::string& name);
@@ -31,7 +31,7 @@ class Character : public ICharacter {
         void equip(AMateria* m);
         void unequip(int idx);
         void use(int idx, ICharacter& target);
-        ~Character(); // destructor
+        ~Character();
 };
 
 # endif // CHARACTER_HPP

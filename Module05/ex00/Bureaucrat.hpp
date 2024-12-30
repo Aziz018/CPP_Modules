@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelkheta < aelkheta@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:59:15 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/26 17:05:15 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/29 20:34:40 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,38 @@
 
 # include <iostream>
 
-class Bureaucrat
-{
+class GradeTooLowException : public std::exception {
     private:
-        std::string name;
+        std::string _message;
+    public:
+        GradeTooLowException(const std::string msg) : _message(msg) {}
+        const char* what() const throw() {
+            return _message.c_str();
+        }
+        ~GradeTooLowException() throw() {}
+};
+
+class GradeTooHighException : public std::exception {
+    private:
+        std::string _message;
+    public:
+        GradeTooHighException(const std::string msg) : _message(msg) {}
+        const char* what() const throw() {
+            return _message.c_str();
+        }
+        ~GradeTooHighException() throw() {}
+};
+
+class Bureaucrat {
+    private:
+        const std::string _name;
+        short _grade;
     public:
         Bureaucrat();
+        Bureaucrat(const std::string& name, short grade);
         Bureaucrat(const Bureaucrat& bureaucrat);
         Bureaucrat operator= (const Bureaucrat& copy);
         ~Bureaucrat();
 };
-
-Bureaucrat::Bureaucrat() {
-}
-
-Bureaucrat::Bureaucrat(const Bureaucrat& bureaucrat) {
-
-}
-
-Bureaucrat Bureaucrat::operator= (const Bureaucrat& copy) {
-
-}
-
-Bureaucrat::~Bureaucrat() {
-
-}
-
 
 # endif // BUREAUCRAT_HPP

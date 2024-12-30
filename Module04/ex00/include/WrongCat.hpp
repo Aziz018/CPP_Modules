@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:39:35 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/23 06:39:38 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/30 08:32:51 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class WrongCat : public WrongAnimal {
         WrongCat& operator= ( const WrongCat& copy );
         ~WrongCat();
         void makeSound() const;
-        // const  std::string& getType() const;
 };
 
 # endif // WRONG_CAT_HPP

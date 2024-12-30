@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:25:38 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/26 16:35:51 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/30 08:55:27 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ MateriaSource MateriaSource::operator= (const MateriaSource& copy) {
     if (this != &copy) {
         for (int i = 0; i < 4; i++) {
             if (copy._materia[i]) {
+                // if (this->_materia[i]) {
+                //     delete this->_materia[i];
+                //     this->_materia[i] = NULL;
+                // }
                 this->_materia[i] = copy._materia[i]->clone();
             }
             else {
@@ -44,6 +48,7 @@ MateriaSource MateriaSource::operator= (const MateriaSource& copy) {
             }
         }
     }
+    return *this;
 }
 
 void MateriaSource::learnMateria(AMateria* m) {

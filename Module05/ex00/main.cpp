@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelkheta < aelkheta@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:59:17 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/26 17:00:12 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/29 20:16:32 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <Bureaucrat.hpp>
 
 int main () {
-    
+
+    return 0;
 }

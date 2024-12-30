@@ -1,0 +1,5 @@
+objdump
+hexdump
+readelf
+batcat
+xxd

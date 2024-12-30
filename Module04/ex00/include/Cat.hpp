@@ -23,7 +23,6 @@ class Cat : public Animal {
         Cat& operator=(const Cat& copy);
         ~Cat();
         void makeSound() const;
-        // const std::string& getType() const;
 };
 
 #endif

@@ -6,12 +6,12 @@
 #    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:05 by aelkheta          #+#    #+#              #
-#    Updated: 2024/12/17 14:40:53 by aelkheta         ###   ########.fr        #
+#    Updated: 2024/12/30 08:14:38 by aelkheta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++
-CPP_FLAGS := -Wall -Wextra -Werror -std=c++98
+CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 
 NAME := Animal
 INCLUDE := -I ./include
 

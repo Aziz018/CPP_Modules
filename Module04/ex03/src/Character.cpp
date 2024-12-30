@@ -6,7 +6,7 @@
 /*   By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 09:24:55 by aelkheta          #+#    #+#             */
-/*   Updated: 2024/12/26 08:29:03 by aelkheta         ###   ########.fr       */
+/*   Updated: 2024/12/30 09:16:19 by aelkheta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,13 @@ Character::Character(const Character& character) : _name(character._name) {
 }
 
 Character Character::operator= (const Character& copy) {
+    std::cout << "operator = called" << std::endl;
     if (this != &copy) {
         this->_name = copy._name;
         for (int i = 0; i < 4; i++) {
             if (this->_slotes[i]) {
                 delete this->_slotes[i];
+                this->_slotes[i] = NULL;
             }
             if (copy._slotes[i]) {
                 this->_slotes[i] = copy._slotes[i]->clone(); // clone new materia (deep copy)
@@ -56,7 +58,6 @@ Character Character::operator= (const Character& copy) {
             else {
                 this->_slotes[i] = NULL;
             }
-            this->_slotes[i] = copy._slotes[i];
         }
     }
     return *this;
