@@ -4,8 +4,6 @@
 
 ## abstract classes
 
-
-
 ### Virtual Functions
 
 A **virtual function** is a special member function in a base class that you intend to be **overridden** (redefined) in its derived classes. When you declare a function as `virtual`, you're telling the compiler that it's not always the base class's version of the function that should be called. Instead, the actual type of the object at runtime will determine which version of the function gets executed. This ability is called **dynamic dispatch** or **late binding**.
