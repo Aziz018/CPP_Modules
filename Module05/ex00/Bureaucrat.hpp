@@ -6,7 +6,7 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:59:15 by aelkheta          #+#    #+#             */
-/*   Updated: 2025/01/02 14:35:32 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/02 16:14:14 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ class Bureaucrat {
                 }
                 ~GradeTooHighException() throw() {}
         };
-
 };
 
 std::ostream& operator<< (std::ostream& os, const Bureaucrat& bureaucrat);

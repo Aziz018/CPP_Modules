@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aelkheta < aelkheta@student.1337.ma>       +#+  +:+       +#+         #
+#    By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/26 16:59:20 by aelkheta          #+#    #+#              #
-#    Updated: 2024/12/29 19:58:53 by aelkheta         ###   ########.fr        #
+#    Updated: 2025/01/02 14:40:24 by aelkheta@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++
 CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 -g3
-NAME := bureaucrat
+NAME := Bureaucrat
 INCLUDE := -I./
 
 SRC := $(shell find . -name '*.cpp')
