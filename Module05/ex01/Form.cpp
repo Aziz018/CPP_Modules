@@ -6,7 +6,7 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:43:39 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/02 18:11:38 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/02 18:12:29 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,6 @@ const int& Form::getGradeToSign() const {
 const int& Form::getGradeToExec() const {
     return _gradeRequiredToExec;
 }
-
-// void Form::beSigned(Bureaucrat& bureaucrat) {
-//     if (bureaucrat.getGrade() <= this->getGradeToSign()) {
-//         this->_isSigned = true;
-//     }
-//     else {
-//         throw Form::GradeTooLowException("Grade Sign Too Low");
-//     }
-// }
 
 std::ostream& operator<<(std::ostream& os, const Form& form) {
     os << "Form Name: " << form.getName() << ", Signed: " << form.getIsSigned()
