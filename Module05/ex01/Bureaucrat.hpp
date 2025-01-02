@@ -6,14 +6,17 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:59:15 by aelkheta          #+#    #+#             */
-/*   Updated: 2025/01/02 14:35:32 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/02 18:01:04 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
+# include <Form.hpp>
 # include <iostream>
+
+// class Form;
 
 class Bureaucrat {
     private:
@@ -32,6 +35,8 @@ class Bureaucrat {
         void DecrementGrade();
         std::string getName() const;
         short getGrade() const;
+
+        void signForm(Form& form);
 
         class GradeTooLowException : public std::exception {
             private:

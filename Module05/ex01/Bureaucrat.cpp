@@ -6,7 +6,7 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:59:13 by aelkheta          #+#    #+#             */
-/*   Updated: 2025/01/02 14:35:41 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/02 18:12:01 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,31 @@ void Bureaucrat::DecrementGrade()
 }
 
 std::ostream& operator<< (std::ostream& os, const Bureaucrat& bureaucrat) {
-    os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
+    os << bureaucrat.getName() << ", bureaucrat grade "
+       << bureaucrat.getGrade() << ".";
     return os;
+}
+
+void Bureaucrat::signForm(Form& form) {
+    try
+    {
+        form.beSigned(*this);
+        std::cout << this->_name << " signed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << this->_name << " couldn't sign "
+                  << form.getName() << " because "
+                  << e.what() << std::endl;
+    }
+}
+
+// Define beSigned outside of Form class to avoid circular dependency
+void Form::beSigned(Bureaucrat& bureaucrat) {
+    if (bureaucrat.getGrade() <= this->getGradeToSign()) {
+        this->_isSigned = true;
+    }
+    else {
+        throw Form::GradeTooLowException("Grade Sign Too Low");
+    }
 }
