@@ -6,10 +6,11 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:59:17 by aelkheta          #+#    #+#             */
-/*   Updated: 2025/01/02 14:36:32 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/03 20:16:22 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 # include <Bureaucrat.hpp>
 
 int main ()
