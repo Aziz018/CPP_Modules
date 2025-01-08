@@ -37,7 +37,7 @@ class AForm {
 
         void beSigned(Bureaucrat& bureaucrat);
 
-        virtual void execute(Bureaucrat const & executor) = 0;
+        virtual void execute(Bureaucrat const &executor) const = 0;
 
         class GradeTooHighException : public std::exception {
             private:
@@ -59,6 +59,17 @@ class AForm {
                     return _message.c_str();
                 }
                 ~GradeTooLowException() throw() {}
+        };
+
+        class FormNotSigned : public std::exception {
+            private:
+                std::string _message;
+            public:
+                FormNotSigned(const std::string message) : _message(message) {}
+                const char* what() throw() {
+                    return _message.c_str();
+                }
+                ~FormNotSigned() throw() {}
         };
 };
 

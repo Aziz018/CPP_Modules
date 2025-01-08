@@ -6,7 +6,7 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:59:13 by aelkheta          #+#    #+#             */
-/*   Updated: 2025/01/08 13:15:47 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/08 13:25:00 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void Bureaucrat::signForm(AForm& form) {
     }
 }
 
-// Define beSigned outside of Form class to avoid circular dependency
+// Define beSigned outside of AForm class to avoid circular dependency
 void AForm::beSigned(Bureaucrat& bureaucrat) {
     if (bureaucrat.getGrade() <= this->getGradeToSign()) {
         this->_isSigned = true;

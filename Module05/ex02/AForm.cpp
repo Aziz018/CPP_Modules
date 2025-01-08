@@ -6,13 +6,13 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 18:25:20 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/08 12:39:10 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/08 16:31:21 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <AForm.hpp>
 
-AForm::AForm() : _name(""),
+AForm::AForm() : _name("Undefined"),
         _isSigned(false),
         _gradeRequiredToSign(1),
         _gradeRequiredToExec(1) {
@@ -67,7 +67,7 @@ const int& AForm::getGradeToExec() const {
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& form) {
-    os << "Form Name: " << form.getName() << ", Signed: " << form.getIsSigned()
+    os << "Form Name: " << form.getName() << ", Signed: " << (form.getIsSigned() ? "Yes" : "No")
        << ", Grade to Sign: " << form.getGradeToSign()
        << ", Grade to Execute: " << form.getGradeToExec();
     return os;
