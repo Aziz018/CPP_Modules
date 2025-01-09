@@ -66,7 +66,7 @@ class AForm {
                 std::string _message;
             public:
                 FormNotSigned(const std::string message) : _message(message) {}
-                const char* what() throw() {
+                const char* what() const throw() {
                     return _message.c_str();
                 }
                 ~FormNotSigned() throw() {}
