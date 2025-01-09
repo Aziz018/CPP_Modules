@@ -6,7 +6,7 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:59:15 by aelkheta          #+#    #+#             */
-/*   Updated: 2025/01/08 13:25:14 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/09 09:28:09 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Bureaucrat {
         short getGrade() const;
 
         void signForm(AForm& form);
+        void executeForm(AForm const &form);
 
         class GradeTooLowException : public std::exception {
             private:
@@ -59,7 +60,6 @@ class Bureaucrat {
                 }
                 ~GradeTooHighException() throw() {}
         };
-
 };
 
 std::ostream& operator<< (std::ostream& os, const Bureaucrat& bureaucrat);

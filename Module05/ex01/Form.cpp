@@ -6,7 +6,7 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 14:43:39 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/02 18:12:29 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/08 16:31:41 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ const int& Form::getGradeToExec() const {
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& form) {
-    os << "Form Name: " << form.getName() << ", Signed: " << form.getIsSigned()
+    os << "Form Name: " << form.getName() << ", Signed: " << (form.getIsSigned() ? "Yes" : "No")
        << ", Grade to Sign: " << form.getGradeToSign()
        << ", Grade to Execute: " << form.getGradeToExec();
     return os;
