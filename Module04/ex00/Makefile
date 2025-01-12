@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
+#    By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:05 by aelkheta          #+#    #+#              #
-#    Updated: 2024/12/22 10:42:18 by aelkheta         ###   ########.fr        #
+#    Updated: 2025/01/12 18:11:49 by aelkheta@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++
+CXX := c++
 CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=undefined
 NAME := Animal
 INCLDUE := -I ./include
@@ -21,11 +21,11 @@ OBJ := $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 %.o: %.cpp
-	@$(CC) $(CPP_FLAGS) ${INCLDUE} -c $^ -o $@
+	@$(CXX) $(CPP_FLAGS) ${INCLDUE} -c $^ -o $@
 	@echo "Compiling ..."
 
 $(NAME): $(OBJ)
-	@$(CC) $(CPP_FLAGS) ${INCLDUE} $^ -o $@
+	@$(CXX) $(CPP_FLAGS) ${INCLDUE} $^ -o $@
 	@echo "Compiling ..."
 
 clean:

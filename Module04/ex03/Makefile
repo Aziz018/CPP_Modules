@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aelkheta <aelkheta@student.42.fr>          +#+  +:+       +#+         #
+#    By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/25 09:27:05 by aelkheta          #+#    #+#              #
-#    Updated: 2024/12/30 09:23:18 by aelkheta         ###   ########.fr        #
+#    Updated: 2025/01/12 18:12:21 by aelkheta@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++
+CXX := c++
 CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=address
 NAME := AMateria
 INCLUDE := -I ./include
@@ -21,11 +21,11 @@ OBJ := $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 %.o: %.cpp
-	@$(CC) $(CPP_FLAGS) $(INCLUDE) -c $^ -o $@
+	@$(CXX) $(CPP_FLAGS) $(INCLUDE) -c $^ -o $@
 	@echo "Compiling ..."
 
 $(NAME): $(OBJ)
-	@$(CC) $(CPP_FLAGS) $(INCLUDE) $^ -o $@
+	@$(CXX) $(CPP_FLAGS) $(INCLUDE) $^ -o $@
 	@echo "Compiling ..."
 
 clean:

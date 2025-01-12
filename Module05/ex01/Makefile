@@ -6,11 +6,11 @@
 #    By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 14:39:48 by aelkheta@st       #+#    #+#              #
-#    Updated: 2025/01/02 14:40:19 by aelkheta@st      ###   ########.fr        #
+#    Updated: 2025/01/11 18:18:55 by aelkheta@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++
+CXX := c++
 CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 -g3
 NAME := Form
 INCLUDE := -I./
@@ -21,11 +21,11 @@ OBJ := $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 %.o: %.cpp
-	@$(CC) $(CPP_FLAGS) $(INCLUDE) -c $^ -o $@
+	@$(CXX) $(CPP_FLAGS) $(INCLUDE) -c $^ -o $@
 	@echo "Compiling ..."
 
 $(NAME): $(OBJ)
-	@$(CC) $(CPP_FLAGS) $(INCLUDE) $^ -o $@
+	@$(CXX) $(CPP_FLAGS) $(INCLUDE) $^ -o $@
 	@echo "Compiling ..."
 
 clean:
