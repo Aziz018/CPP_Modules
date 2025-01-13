@@ -1,3 +1,9 @@
-# C++ casts
+# C++ Casts or Type Casting (Type Conversion)
 
-## 1. Scalar Types
+## Section 1: Type casting
+
+### 1. Implicit Type Conversion
+
+## Section 2: Literals
+
+### 1. Scalar Types
