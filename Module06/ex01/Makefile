@@ -6,13 +6,13 @@
 #    By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 18:25:37 by aelkheta@st       #+#    #+#              #
-#    Updated: 2025/01/11 18:20:45 by aelkheta@st      ###   ########.fr        #
+#    Updated: 2025/01/13 09:22:29 by aelkheta@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX := c++
 CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 -g3
-NAME := Conversion
+NAME := Serialization
 INCLUDE := -I./
 
 SRC := $(shell find . -name '*.cpp')
