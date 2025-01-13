@@ -6,7 +6,7 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:13:08 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/13 17:47:03 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/13 18:09:28 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,10 @@
 
 class ScalarConverter {
     private:
-        static float ConvertToFloat();
-        static double ConvertToDouble();
-
+        static void PrintImpossible();
         static void PrintConversions(char c);
         static void PrintConversions(float f);
         static void PrintConversions(double d);
-        
-        static void PrintImpossible();
 
     public:
         static void convert(const std::string& literal);
