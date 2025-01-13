@@ -6,12 +6,13 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:13:08 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/13 13:29:52 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/13 17:47:03 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <limits>
+#include <climits>
+#include <iomanip>
 #include <cstdlib>  // for strtof strtod
 #include <cmath>    // for isnan isinf
 
@@ -23,6 +24,8 @@ class ScalarConverter {
         static void PrintConversions(char c);
         static void PrintConversions(float f);
         static void PrintConversions(double d);
+        
+        static void PrintImpossible();
 
     public:
         static void convert(const std::string& literal);
