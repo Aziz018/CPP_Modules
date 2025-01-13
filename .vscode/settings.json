@@ -61,6 +61,7 @@
         "chrono": "cpp",
         "cstring": "cpp",
         "map": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "climits": "cpp"
     }
 }
