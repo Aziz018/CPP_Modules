@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 15:03:52 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/14 16:56:55 by aelkheta@st      ###   ########.fr       */
+/*   Created: 2025/01/14 16:37:32 by aelkheta@st       #+#    #+#             */
+/*   Updated: 2025/01/14 17:29:32 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Serializer.hpp>
+#ifndef DATA_HPP
+#define DATA_HPP
 
-Serializer::Serializer() {}
-Serializer::~Serializer() {}
+#include <iostream>
 
-uintptr_t Serializer::serialize(Data* ptr) {
-    return reinterpret_cast<uintptr_t>(ptr);
-}
-Data* Serializer::deserialize(uintptr_t raw) {
-    return reinterpret_cast<Data*>(raw);
-}
+struct Data {
+    int age;
+    std::string firstName;
+    std::string lastName;
+};
+
+#endif // DATA_HPP
