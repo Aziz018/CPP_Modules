@@ -6,7 +6,7 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:59:00 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/16 19:10:31 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/16 19:44:46 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,10 @@ class Array
                 }
             }
             return *this;
+        }
+
+        void size() {
+            return this->_size;
         }
 
         T& operator[] ( unsigned int index ) {
