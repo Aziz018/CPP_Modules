@@ -6,13 +6,13 @@
 #    By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 18:25:37 by aelkheta@st       #+#    #+#              #
-#    Updated: 2025/01/13 17:00:11 by aelkheta@st      ###   ########.fr        #
+#    Updated: 2025/01/16 17:38:28 by aelkheta@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX := c++
 CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 -g3
-NAME := Array
+NAME := Iter
 INCLUDE := -I./
 
 SRC := $(shell find . -name '*.cpp')
@@ -39,4 +39,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-.SECONDARY:    
+.SECONDARY:
