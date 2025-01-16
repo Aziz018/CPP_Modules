@@ -34,7 +34,22 @@ int main() {
 - Q. Why we use static_cast when implicit conversion is involved? 
 - A. Because C-Style cast is hard to find in code, but you can search static_cast keyword.
 
-2. 
+2. Prevent dangerous casts - more restrective
+
+```cpp
+#include <iostream>
+
+int main() {
+    char c = 'a';
+    int *p1 = (int *)&c; // allowed in C-Style cast.
+    *p1 = 3; // Pass at compile-time, but Fail at run-time because accessing 4 bytes and c has just 1 byte.
+    // if we compile with -fsanitize=address flag we'll see a stack-buffer-overflow
+
+    int *p2 = static_cast<int *>(&c); // compile-time Error.
+    return 0;
+}
+```
+
 3. 
 4. 
 5. 
