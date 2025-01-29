@@ -6,13 +6,11 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 10:02:11 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/29 14:36:41 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/01/29 14:39:07 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Span.hpp>
-
-#include <cstdlib>
 
 Span::Span(unsigned int n) : _maxSize(n)
 {

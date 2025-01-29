@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 10:02:14 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/29 14:37:56 by aelkheta@st      ###   ########.fr       */
+/*   Created: 2025/01/29 14:42:25 by aelkheta@st       #+#    #+#             */
+/*   Updated: 2025/01/29 14:48:08 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-#define SPAN_HPP
-
-#include <exception>
 #include <iostream>
-#include <vector>
-#include <cstdlib>
 
-class Span
-{
-private:
-    unsigned int _maxSize;
-    std::vector<int> _array;
+template <typename T>
+class MutantStack {
     
-public:
-    Span(unsigned int n);
-    void addNumber(int number);
-    int shortestSpan();
-    int longestSpan();
-    ~Span();
-
-    void print();
 };
-
-#endif // SPAN_HPP
