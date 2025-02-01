@@ -62,6 +62,7 @@
         "cstring": "cpp",
         "map": "cpp",
         "ratio": "cpp",
-        "climits": "cpp"
+        "climits": "cpp",
+        "list": "cpp"
     }
 }
