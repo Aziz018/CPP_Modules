@@ -6,49 +6,28 @@
 /*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:42:25 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/02/01 17:28:23 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/02/02 13:50:36 by aelkheta@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MUTANTSTACK_HPP
+#define MUTANTSTACK_HPP
+
 #include <iostream>
-#include <iterator>
-#include <vector>
 #include <stack>
 
 template <typename T>
-class MutantStack {
-    private:
-        std::vector<T> _array;
-        
-
+class MutantStack : public std::stack<T> {
     public:
-        void push(T x);
-        void top();
-        void pop();
-        void size();
+        typedef typename std::stack<T>::container_type::iterator iterator;
+
+        iterator begin() {
+            return this->c.begin();
+        }
+        
+        iterator end() {
+            return this->c.end();
+        }
 };
 
-template <typename T>
-std::ostream& operator<<(std::ostream& os, const MutantStack<T>& stack) {
-    return os;
-}
-
-template <typename T>
-void MutantStack<T>::push(T x) {
-    
-}
-
-template <typename T>
-void MutantStack<T>::top() {
-    
-}
-
-template <typename T>
-void MutantStack<T>::pop() {
-    
-}
-
-template <typename T>
-void MutantStack<T>::size() {
-    
-}
+#endif // MUTANTSTACK_HPP
