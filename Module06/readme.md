@@ -56,6 +56,86 @@ int main() {
 6. 
 7. 
 
+
+In C++, the casting operators `static_cast`, `dynamic_cast`, and `reinterpret_cast` are used for different types of conversions. Here's when and why you use each:
+
+---
+
+### 1. `static_cast`
+
+**Use when:** You want to perform *compile-time* conversions between related types.
+
+**Typical use cases:**
+
+* Converting between numeric types (e.g., `int` to `float`).
+* Upcasting in class hierarchies (e.g., `Derived*` to `Base*`).
+* Downcasting in class hierarchies **only if you're sure** the cast is valid.
+* Converting void pointers to typed pointers.
+
+**Example:**
+
+```cpp
+float f = 3.14;
+int i = static_cast<int>(f);  // float to int
+```
+
+---
+
+### 2. `dynamic_cast`
+
+**Use when:** You need *runtime-checked* conversions in class hierarchies (i.e., safe downcasting).
+
+**Requirements:**
+
+* Base class must have at least one virtual function (i.e., be polymorphic).
+* Works only on pointers or references to polymorphic types.
+
+**Typical use case:**
+
+* Safely cast a `Base*` to a `Derived*`.
+
+**Example:**
+
+```cpp
+Base* b = new Derived();
+Derived* d = dynamic_cast<Derived*>(b);
+if (d) {
+    // Safe to use d
+}
+```
+
+---
+
+### 3. `reinterpret_cast`
+
+**Use when:** You need to perform **bitwise reinterpretation** of types. This is the most dangerous cast and should be used **very carefully**.
+
+**Typical use cases:**
+
+* Converting between unrelated pointer types (e.g., `int*` to `char*`).
+* Casting an integer to a pointer or vice versa (in low-level programming).
+
+**Example:**
+
+```cpp
+int* ip = new int(10);
+char* cp = reinterpret_cast<char*>(ip);  // reinterpret pointer type
+```
+
+---
+
+### Summary Table:
+
+| Cast Type          | Safety    | Checked at Runtime | Use Case                         |
+| ------------------ | --------- | ------------------ | -------------------------------- |
+| `static_cast`      | Safe      | No                 | Numeric, upcasting, void\*       |
+| `dynamic_cast`     | Safe      | Yes                | Safe downcasting in polymorphism |
+| `reinterpret_cast` | Dangerous | No                 | Low-level, bit-level operations  |
+
+Would you like examples of each in a class hierarchy?
+
+
+
 # Section 2: Literals
 
 ## 1. Scalar Types
