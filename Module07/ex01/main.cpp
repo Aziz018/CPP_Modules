@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
+/*   By: p4nd4 <p4nd4@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:53:21 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/16 17:36:14 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/05/08 08:37:29 by p4nd4            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ int main() {
     }
 
     iter(a, SIZE, print);
+    std::cout << std::endl;
+
+    int b[SIZE];
+    for (size_t i = 0; i < SIZE; i++)
+    {
+        b[i] = 55;
+    }
+
+    iter(b, SIZE, print);
 
     return 0;
 }

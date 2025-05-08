@@ -3,10 +3,81 @@
 /*                                                        :::      ::::::::   */
 /*   Array.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
+/*   By: p4nd4 <p4nd4@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:58:58 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/13 16:58:59 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/05/08 08:51:21 by p4nd4            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include <Array.hpp>
+
+// template <typename T>
+// Array<T>::Array() : _size( 0 ) , _array( NULL ) {
+// }
+
+// template <typename T>
+// Array<T>::Array( unsigned int n ) {
+//     this->_size = n;
+//     if (this->_size == 0) {
+//         this->_array = NULL;
+//     }
+//     else {
+//         this->_array = new T[this->_size]; // should init with default.
+//         for (unsigned int i = 0; i < this->_size; i++) {
+//             this->_array[i] = 0;
+//         }
+//     }
+// }
+
+// template <typename T>
+// Array<T>::Array( const Array& other ) {
+//     this->_size = other._size;
+//     if (this->_size == 0) {
+//         this->_size = 0;
+//         this->_array = NULL;
+//     }
+//     else {
+//         this->_array = new T[other._size];
+//         for (unsigned int i = 0; i < _size; i++) {
+//             this->_array[i] = other._array[i];
+//         }
+//     }
+// }
+
+// template <typename T>
+// Array<T>& Array<T>::operator= ( T& copy ) {
+//     if (this != &copy) {
+//         this->_size = copy._size;
+//         if (this->_size == 0) {
+//             this->_size = 0;
+//             this->_array = NULL;
+//         }
+//         else {
+//             this->_array = new T[copy._size];
+//             for (unsigned int i = 0; i < _size; i++) {
+//                 this->_array[i] = copy._array[i];
+//             }
+//         }
+//     }
+//     return *this;
+// }
+
+// template <typename T>
+// unsigned int Array<T>::size() {
+//     return this->_size;
+// }
+
+// template <typename T>
+// T& Array<T>::operator[] ( unsigned int index ) {
+//     if (index >= this->_size) {
+//         throw std::out_of_range("index is out of bounds");
+//         // throw std::exception("index is out of bounds");
+//     }
+//     return this->_array[index];
+// }
+
+// template <typename T>
+// Array<T>::~Array() {
+//     delete[] this->_array;
+// }

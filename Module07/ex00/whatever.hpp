@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
+/*   By: p4nd4 <p4nd4@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:15:17 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/16 14:44:28 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/05/08 08:15:50 by p4nd4            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ T min(T a, T b) {
 
 template <typename T>
 T max(T a, T b) {
-    return a < b ? b : a;
+    return a > b ? a : b;
 }
 
 #endif // WHATERVER_HPP

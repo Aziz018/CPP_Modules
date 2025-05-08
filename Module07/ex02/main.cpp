@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
+/*   By: p4nd4 <p4nd4@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:59:03 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/16 18:43:17 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/05/08 08:48:50 by p4nd4            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <Array.hpp>
-#include <cstdlib>
+#include <cstdlib>  // for srand
 
 #define MAX_VAL 750
 int main()
