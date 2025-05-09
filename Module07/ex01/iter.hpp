@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelkheta@student.1337.ma <aelkheta>        +#+  +:+       +#+        */
+/*   By: p4nd4 <p4nd4@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:53:18 by aelkheta@st       #+#    #+#             */
-/*   Updated: 2025/01/16 17:36:16 by aelkheta@st      ###   ########.fr       */
+/*   Updated: 2025/05/09 05:23:05 by p4nd4            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 #include <iostream>
 
-template <typename T>
-void iter(T *Array, size_t ArrayLen, void (*func)(T &)) {
+template <typename T, typename F>
+void iter(T *Array, size_t ArrayLen, F func) {
     for (size_t i = 0; i < ArrayLen; i++) {
         func(Array[i]);
     }
