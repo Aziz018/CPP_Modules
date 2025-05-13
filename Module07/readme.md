@@ -169,7 +169,7 @@ int result = Factorial<5>::value;  // Computed at compile time: 120
 Templates are instantiated by the compiler in a recursive way—each instantiation “calls” the next.
 
 ---
-
+<!-- 
 ## 🧱 Template Metaprogramming Building Blocks
 
 | Feature                | Description                              |
@@ -201,4 +201,137 @@ Used to detect pointer types at compile time. This pattern forms the basis of th
 
 ---
 
-## How Templates work?
+# `Template Specialization` and `Template Metaprogramming` features
+
+---
+
+## 🔧 1. Template Specialization
+
+Template specialization allows you to customize the behavior of a template for a specific type.
+
+### 📌 **Full Specialization**
+
+You define a completely different version of a template when it's instantiated with a specific type.
+
+```cpp
+// Generic template
+template <typename T>
+class Printer {
+public:
+    void print() {
+        std::cout << "Generic Printer" << std::endl;
+    }
+};
+
+// Specialized version for int
+template <>
+class Printer<int> {
+public:
+    void print() {
+        std::cout << "Int Printer" << std::endl;
+    }
+};
+```
+
+### 🔸 Usage:
+
+```cpp
+Printer<double> a;
+a.print();  // Generic Printer
+
+Printer<int> b;
+b.print();  // Int Printer
+```
+
+---
+
+### 📌 **Partial Specialization**
+
+You can also specialize part of a template.
+
+```cpp
+template <typename T, typename U>
+class Pair {
+public:
+    void show() {
+        std::cout << "Generic Pair" << std::endl;
+    }
+};
+
+// Specialization when second type is int
+template <typename T>
+class Pair<T, int> {
+public:
+    void show() {
+        std::cout << "Pair with int second" << std::endl;
+    }
+};
+```
+
+---
+
+## 🤯 2. Template Metaprogramming
+
+Template metaprogramming uses templates to perform **computations at compile time** — like a “functional language inside the compiler.”
+
+### ✅ Classic Example: Compile-time Factorial
+
+```cpp
+template <int N>
+struct Factorial {
+    static const int value = N * Factorial<N - 1>::value;
+};
+
+template <>
+struct Factorial<0> {
+    static const int value = 1;
+};
+```
+
+### 🔸 Usage:
+
+```cpp
+int x = Factorial<5>::value; // Computed at compile time: 120
+```
+
+---
+
+### ⚙️ How It Works
+
+The compiler recursively instantiates templates to compute values:
+
+```
+Factorial<5>::value
+→ 5 * Factorial<4>::value
+→ 5 * 4 * Factorial<3>::value
+→ ...
+→ 5 * 4 * 3 * 2 * 1 * 1
+```
+
+---
+
+## 🚀 Modern Metaprogramming (C++11+)
+
+C++11 introduced `constexpr`, `std::enable_if`, `std::conditional`, `std::integral_constant`, and `type_traits`, which improved metaprogramming and made it easier.
+
+Example: Use `enable_if` to conditionally enable a function:
+
+```cpp
+template<typename T>
+typename std::enable_if<std::is_integral<T>::value, void>::type
+foo(T t) {
+    std::cout << "Integral type\n";
+}
+```
+
+---
+
+## 🧠 Summary
+
+| Feature                    | Description                                | Example Use                               |
+| -------------------------- | ------------------------------------------ | ----------------------------------------- |
+| **Full Specialization**    | Redefine template completely for a type    | Special behavior for `int`                |
+| **Partial Specialization** | Redefine part of a template                | Change behavior when second type is `int` |
+| **Metaprogramming**        | Use templates for compile-time computation | Factorial, SFINAE, type traits            |
+
+--- -->
