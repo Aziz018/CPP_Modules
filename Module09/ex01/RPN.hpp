@@ -10,3 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
+#include <iostream>
+#include <stack>
+#include <string>
+#include <sstream>
+#include <stdexcept>
+#include <cctype>
+#include <cstdlib>
+
+class RPN {
+    private:
+        std::stack<int> operands;
+        bool isOperator(const std::string& token);
+        void performOperation(const std::string& op);
+
+    public:
+        int evaluate(const std::string& expression);
+};
