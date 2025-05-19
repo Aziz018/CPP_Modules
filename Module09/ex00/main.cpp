@@ -98,9 +98,20 @@ void loadBitcoinPrices(std::map<Date, float>& prices) {
 
 Date findClosestDate(const std::map<Date, float>& prices, const Date& target) {
     std::map<Date, float>::const_iterator it = prices.lower_bound(target);
+
+    /*
+    lower_bound(key)
+    Finds the first element with a key not less than key.
     
-    if (it == prices.begin()) return it->first;
-    if (it == prices.end()) return (--it)->first;
+    Behavior:
+        - Returns an iterator to the first element with key >= search_key.
+        - If no such element exists, returns map.end().
+    */
+
+    if (it == prices.begin())
+        return it->first;
+    if (it == prices.end())
+        return (--it)->first;
     
     std::map<Date, float>::const_iterator prev = it;
     --prev;
@@ -109,6 +120,16 @@ Date findClosestDate(const std::map<Date, float>& prices, const Date& target) {
         return prev->first;
     }
     return it->first;
+}
+
+void trim(std::string& str) {
+    size_t start = str.find_first_not_of(" \t");
+    if (start != std::string::npos)
+        str.erase(0, start);
+
+    size_t end = str.find_last_not_of(" \t");
+    if (end != std::string::npos)
+        str.erase(end + 1);
 }
 
 void processInputFile(const std::map<Date, float>& prices, const std::string& filename) {
@@ -127,9 +148,10 @@ void processInputFile(const std::map<Date, float>& prices, const std::string& fi
         }
 
         std::string dateStr = line.substr(0, pipePos);
-        // should trim whitespaces
+        trim(dateStr);
+
         std::string valueStr = line.substr(pipePos + 1);
-        // should trim whitespaces
+        trim(valueStr);
 
         Date date;
         if (!parseDate(dateStr, date)) {
@@ -176,6 +198,7 @@ int main(int ac, char* av[]) {
     }
     catch(const std::exception& e) {
         std::cerr << e.what() << std::endl;
+        return 1;
     }
     return 0;
 }

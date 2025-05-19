@@ -23,7 +23,7 @@ class BitcoinExchange
     private:
         /* data */
     public:
-        BitcoinExchange(const std::string& db);
+        BitcoinExchange();
         ~BitcoinExchange();
 };
 
