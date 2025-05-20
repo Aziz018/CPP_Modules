@@ -33,12 +33,32 @@ template <typename T>
 class MutantStack : public std::stack<T> {
     public:
         typedef typename std::stack<T>::container_type::iterator iterator;
+        typedef typename std::stack<T>::container_type::const_iterator citerator;
+
+        MutantStack() : std::stack<T>() {}
+        MutantStack( const MutantStack& other ) : std::stack<T>(other) {}
+        virtual ~MutantStack() {}
+
+        MutantStack& operator= ( const MutantStack& copy ) {
+            if (this != &copy) {
+                std::stack<T>::operator= (copy);
+            }
+            return *this;
+        }
 
         iterator begin() {
             return this->c.begin();
         }
         
         iterator end() {
+            return this->c.end();
+        }
+
+        citerator begin() const {
+            return this->c.begin();
+        }
+        
+        citerator end() const {
             return this->c.end();
         }
 };

@@ -20,18 +20,24 @@
 
 class Span
 {
-private:
-    unsigned int _maxSize;
-    std::vector<int> _array;
-    
-public:
-    Span(unsigned int n);
-    void addNumber(int number);
-    int shortestSpan();
-    int longestSpan();
-    ~Span();
+    private:
+        unsigned int _size;
+        std::vector<int> _array;
+        
+    public:
+        Span();
+        Span(const Span& other);
+        Span& operator= (const Span& copy);
+        ~Span();
+        
+        unsigned int size() const;
+        const std::vector<int>& getSpan() const;
+        Span(unsigned int n);
+        void addNumber(int number);
+        int shortestSpan();
+        int longestSpan();
 
-    void print();
+        void print();
 };
 
 #endif // SPAN_HPP

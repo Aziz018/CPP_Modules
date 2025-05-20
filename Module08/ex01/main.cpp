@@ -30,7 +30,7 @@
 
 int main()
 {
-    Span sp = Span(5);
+    Span sp = Span(6);
 
     sp.addNumber(6);
     sp.addNumber(3);
@@ -38,9 +38,14 @@ int main()
     sp.addNumber(9);
     sp.addNumber(11);
 
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    Span copy(sp);
+    sp.addNumber(9);
+
+    // std::cout << sp.shortestSpan() << std::endl;
+    // std::cout << sp.longestSpan() << std::endl;
+    
     sp.print();
+    copy.print();
 
     return 0;
 }
