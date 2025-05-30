@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merge Sort Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            margin: 20px auto;
+            display: block;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .controls {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Merge Sort Visualization</h1>
+    <div class="controls">
+        <button id="startBtn">Start Sorting</button>
+        <button id="resetBtn">Reset</button>
+        Speed: <input type="range" id="speed" min="1" max="10" value="5">
+    </div>
+    <canvas id="canvas" width="800" height="400"></canvas>
+    <div id="status">Ready to sort: [5, 12, 4, 122, 65, 1, 17, -21, 177]</div>
+
+    <script>
+        // Initial data
+        const originalArray = [5, 12, 4, 122, 65, 1, 17, -21, 177];
+        let array = [...originalArray];
+        let steps = [];
+        let currentStep = 0;
+        let isSorting = false;
+        let speed = 5;
+
+        // Canvas setup
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const statusDiv = document.getElementById('status');
+
+        // Control elements
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const speedControl = document.getElementById('speed');
+
+        // Draw the array as bars
+        function drawArray(arr, leftIndices = [], rightIndices = [], mergedIndices = []) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            const barWidth = canvas.width / arr.length;
+            const maxValue = Math.max(...arr);
+            const scale = canvas.height / (maxValue + 20);
+            
+            for (let i = 0; i < arr.length; i++) {
+                const barHeight = arr[i] * scale;
+                const x = i * barWidth;
+                const y = canvas.height - barHeight;
+                
+                // Determine bar color
+                if (mergedIndices.includes(i)) {
+                    ctx.fillStyle = '#4CAF50'; // Green for merged elements
+                } else if (leftIndices.includes(i)) {
+                    ctx.fillStyle = '#2196F3'; // Blue for left array
+                } else if (rightIndices.includes(i)) {
+                    ctx.fillStyle = '#FF9800'; // Orange for right array
+                } else {
+                    ctx.fillStyle = '#607D8B'; // Default color
+                }
+                
+                ctx.fillRect(x, y, barWidth - 2, barHeight);
+                
+                // Draw value text if there's enough space
+                if (barWidth > 30) {
+                    ctx.fillStyle = '#000';
+                    ctx.font = '12px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(arr[i], x + barWidth/2, y - 5);
+                }
+            }
+        }
+
+        // Record all steps during merge sort
+        function recordMergeSortSteps(arr) {
+            const steps = [];
+            
+            function mergeSort(arr, depth = 0, startIdx = 0) {
+                if (arr.length <= 1) {
+                    return arr;
+                }
+                
+                const mid = Math.floor(arr.length / 2);
+                const left = arr.slice(0, mid);
+                const right = arr.slice(mid);
+                
+                // Record split step
+                steps.push({
+                    action: 'split',
+                    left: [...left],
+                    right: [...right],
+                    depth: depth,
+                    startIdx: startIdx
+                });
+                
+                const leftSorted = mergeSort(left, depth + 1, startIdx);
+                const rightSorted = mergeSort(right, depth + 1, startIdx + mid);
+                
+                // Merge the sorted halves
+                const merged = [];
+                let i = 0, j = 0;
+                const mergeSteps = [];
+                
+                while (i < leftSorted.length && j < rightSorted.length) {
+                    if (leftSorted[i] < rightSorted[j]) {
+                        merged.push(leftSorted[i]);
+                        i++;
+                    } else {
+                        merged.push(rightSorted[j]);
+                        j++;
+                    }
+                    
+                    // Record merge comparison step
+                    mergeSteps.push({
+                        action: 'compare',
+                        leftIndex: i,
+                        rightIndex: j,
+                        merged: [...merged],
+                        leftArray: [...leftSorted],
+                        rightArray: [...rightSorted],
+                        depth: depth,
+                        startIdx: startIdx
+                    });
+                }
+                
+                // Add remaining elements
+                while (i < leftSorted.length) {
+                    merged.push(leftSorted[i]);
+                    i++;
+                    mergeSteps.push({
+                        action: 'add-left',
+                        leftIndex: i,
+                        merged: [...merged],
+                        leftArray: [...leftSorted],
+                        rightArray: [...rightSorted],
+                        depth: depth,
+                        startIdx: startIdx
+                    });
+                }
+                
+                while (j < rightSorted.length) {
+                    merged.push(rightSorted[j]);
+                    j++;
+                    mergeSteps.push({
+                        action: 'add-right',
+                        rightIndex: j,
+                        merged: [...merged],
+                        leftArray: [...leftSorted],
+                        rightArray: [...rightSorted],
+                        depth: depth,
+                        startIdx: startIdx
+                    });
+                }
+                
+                // Add all merge steps
+                steps.push(...mergeSteps);
+                
+                // Record final merged array
+                steps.push({
+                    action: 'merged',
+                    array: [...merged],
+                    depth: depth,
+                    startIdx: startIdx
+                });
+                
+                return merged;
+            }
+            
+            mergeSort(arr);
+            return steps;
+        }
+
+        // Initialize visualization
+        function init() {
+            array = [...originalArray];
+            steps = recordMergeSortSteps(array);
+            currentStep = 0;
+            isSorting = false;
+            drawArray(array);
+            statusDiv.textContent = `Ready to sort: [${array.join(', ')}]`;
+        }
+
+        // Animate the sorting steps
+        function animateSort() {
+            if (currentStep >= steps.length) {
+                isSorting = false;
+                startBtn.textContent = "Start Sorting";
+                statusDiv.textContent = `Sorting complete! Final array: [${array.join(', ')}]`;
+                return;
+            }
+            
+            const step = steps[currentStep];
+            let leftIndices = [];
+            let rightIndices = [];
+            let mergedIndices = [];
+            
+            switch (step.action) {
+                case 'split':
+                    statusDiv.textContent = `Splitting array into left: [${step.left.join(', ')}] and right: [${step.right.join(', ')}]`;
+                    for (let i = 0; i < step.left.length; i++) {
+                        leftIndices.push(step.startIdx + i);
+                    }
+                    for (let i = 0; i < step.right.length; i++) {
+                        rightIndices.push(step.startIdx + step.left.length + i);
+                    }
+                    break;
+                    
+                case 'compare':
+                    statusDiv.textContent = `Comparing ${step.leftArray[step.leftIndex-1]} (left) and ${step.rightArray[step.rightIndex-1]} (right)`;
+                    leftIndices.push(step.startIdx + step.leftIndex - 1);
+                    rightIndices.push(step.startIdx + step.leftArray.length + step.rightIndex - 1);
+                    // Show merged elements so far
+                    for (let i = 0; i < step.merged.length; i++) {
+                        mergedIndices.push(step.startIdx + i);
+                    }
+                    break;
+                    
+                case 'add-left':
+                    statusDiv.textContent = `Adding remaining left element: ${step.leftArray[step.leftIndex-1]}`;
+                    leftIndices.push(step.startIdx + step.leftIndex - 1);
+                    // Show merged elements so far
+                    for (let i = 0; i < step.merged.length; i++) {
+                        mergedIndices.push(step.startIdx + i);
+                    }
+                    break;
+                    
+                case 'add-right':
+                    statusDiv.textContent = `Adding remaining right element: ${step.rightArray[step.rightIndex-1]}`;
+                    rightIndices.push(step.startIdx + step.leftArray.length + step.rightIndex - 1);
+                    // Show merged elements so far
+                    for (let i = 0; i < step.merged.length; i++) {
+                        mergedIndices.push(step.startIdx + i);
+                    }
+                    break;
+                    
+                case 'merged':
+                    statusDiv.textContent = `Merged subarray: [${step.array.join(', ')}]`;
+                    for (let i = 0; i < step.array.length; i++) {
+                        mergedIndices.push(step.startIdx + i);
+                    }
+                    // Update the main array with the merged result
+                    for (let i = 0; i < step.array.length; i++) {
+                        array[step.startIdx + i] = step.array[i];
+                    }
+                    break;
+            }
+            
+            drawArray(array, leftIndices, rightIndices, mergedIndices);
+            currentStep++;
+            
+            if (isSorting) {
+                setTimeout(animateSort, 1000 / speed);
+            }
+        }
+
+        // Event listeners
+        startBtn.addEventListener('click', function() {
+            if (isSorting) {
+                isSorting = false;
+                startBtn.textContent = "Resume Sorting";
+            } else {
+                isSorting = true;
+                startBtn.textContent = "Pause Sorting";
+                if (currentStep >= steps.length) {
+                    init(); // Reset if we reached the end
+                }
+                animateSort();
+            }
+        });
+
+        resetBtn.addEventListener('click', function() {
+            init();
+        });
+
+        speedControl.addEventListener('input', function() {
+            speed = parseInt(this.value);
+        });
+
+        // Initialize
+        init();
+    </script>
+</body>
+</html>
