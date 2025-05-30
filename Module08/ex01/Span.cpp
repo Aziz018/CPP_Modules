@@ -43,9 +43,9 @@ void Span::addNumber(int number) {
     this->_array.push_back(number);
 }
 
-void Span::add(std::vector<int>::iterator begin, std::vector<int>::iterator end, int number) {
+void Span::add(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
     for (std::vector<int>::iterator it = begin; it != end; ++it) {
-        this->addNumber(number);
+        this->addNumber(*it);
     }
 }
 
