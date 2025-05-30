@@ -14,6 +14,7 @@
 
 Span::Span() : _size(0) {}
 Span::Span(unsigned int n) : _size(n) {}
+Span::~Span() {}
 
 Span::Span(const Span& other) : _size(other._size), _array(other._array) {
     // *this = other;
@@ -42,6 +43,12 @@ void Span::addNumber(int number) {
     this->_array.push_back(number);
 }
 
+void Span::add(std::vector<int>::iterator begin, std::vector<int>::iterator end, int number) {
+    for (std::vector<int>::iterator it = begin; it != end; ++it) {
+        this->addNumber(number);
+    }
+}
+
 int Span::shortestSpan() {
     if (this->_size < 2) {
         throw std::exception();
@@ -66,22 +73,20 @@ int Span::longestSpan() {
         throw std::exception();
     }
 
-    int maxDistance = abs(this->_array[0] - this->_array[1]);
-    int maxSpan = maxDistance;
+    // int maxDistance = abs(this->_array[0] - this->_array[1]);
+    // int maxSpan = maxDistance;
 
-    for (size_t i = 1; i < this->_size - 1; i++) {
-        maxDistance = abs(this->_array[i] - this->_array[i + 1]);
+    // for (size_t i = 1; i < this->_size - 1; i++) {
+    //     maxDistance = abs(this->_array[i] - this->_array[i + 1]);
         
-        if (maxSpan < maxDistance) {
-            maxSpan = maxDistance;
-        }
-    }
+    //     if (maxSpan < maxDistance) {
+    //         maxSpan = maxDistance;
+    //     }
+    // }
+
+    int maxSpan = *std::max_element(this->_array.begin(), this->_array.end()) - *std::min_element(this->_array.begin(), this->_array.end());
 
     return maxSpan;
-}
-
-Span::~Span()
-{
 }
 
 void Span::print() {
