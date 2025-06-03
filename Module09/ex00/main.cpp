@@ -60,6 +60,8 @@ bool parseDate(const std::string& dateStr, Date& date) {
     if (*end != '\0' || day < 1 || day > 31)
         return false;
 
+    /// @todo handle leafyear
+
     date.year = static_cast<int>(year);
     date.month = static_cast<int>(month);
     date.day = static_cast<int>(day);
