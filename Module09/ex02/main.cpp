@@ -14,19 +14,41 @@ int main(int ac, char* av[]) {
 
     try
     {
-        std::vector<int> container;
-        parseInput(ac, av, container);
-        fordJohnson(container);
+        std::vector<int>    vec;
+        std::deque<int>     dec;
 
-        for (size_t i = 0; i < container.size(); ++i) {
-            std::cout << container.at(i) << " ";
-        }
-        std::cout << std::endl;
+        parseInput(ac, av, vec);
+        parseInput(ac, av, dec);
+
+        std::cout << "Before: ";
+        printContainer(vec);
+        // printContainer(dec);
+
+        clock_t vecStart = clock();
+        fordJohnson(vec);
+        clock_t vecEnd = clock();
+
+        clock_t decStart = clock();
+        fordJohnson(dec);
+        clock_t decEnd = clock();
+
+        std::cout << "After:  ";
+        printContainer(vec);
+        // printContainer(dec);
+
+        double duration = double(vecEnd - vecStart) / CLOCKS_PER_SEC;
+        std::cout   << "Time to process a range of " << vec.size()
+                    << "elements with std::vector : " << duration * 1e6
+                    << " µs\n";
+
+        duration = double(decEnd - decStart) / CLOCKS_PER_SEC;
+        std::cout   << "Time to process a range of " << dec.size()
+                    << "elements with std::vector : " << duration * 1e6
+                    << " µs";
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
         return 1;
     }
-
 }
