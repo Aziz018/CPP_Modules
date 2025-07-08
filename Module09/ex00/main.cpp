@@ -43,6 +43,16 @@ struct Date {
     }
 };
 
+/*
+    A year is a leap year if:
+        - It is divisible by 4, and
+        - Not divisible by 100, unless
+        - It is also divisible by 400
+*/
+bool isLeapYear(int year) {
+    return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+}
+
 bool parseDate(const std::string& dateStr, Date& date) {
     if (dateStr.size() != 10 || dateStr.at(4) != '-' || dateStr.at(7) != '-')
         return false;
@@ -60,7 +70,16 @@ bool parseDate(const std::string& dateStr, Date& date) {
     if (*end != '\0' || day < 1 || day > 31)
         return false;
 
-    /// @todo handle leafyear
+    // if ((isLeapYear(year) && month == 2 && day > 29) || (!isLeapYear(year) && month == 2 && day > 28))
+    //     return false;
+
+    if (month == 2) {
+        bool leap = isLeapYear(year);
+        if ((leap && day > 29))
+            return false;
+        if ((!leap && day > 28))
+            return false;
+    }
 
     date.year = static_cast<int>(year);
     date.month = static_cast<int>(month);
@@ -102,12 +121,12 @@ Date findClosestDate(const std::map<Date, float>& prices, const Date& target) {
     std::map<Date, float>::const_iterator it = prices.lower_bound(target);
 
     /*
-    lower_bound(key)
-    Finds the first element with a key not less than key.
-    
-    Behavior:
-        - Returns an iterator to the first element with key >= search_key.
-        - If no such element exists, returns map.end().
+        lower_bound(key)
+        Finds the first element with a key not less than key.
+        
+        Behavior:
+            - Returns an iterator to the first element with key >= search_key.
+            - If no such element exists, returns map.end().
     */
 
     if (it == prices.begin())
