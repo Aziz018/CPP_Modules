@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CXX := c++
-CPP_FLAGS := -Wall -Wextra -Werror -std=c++98 # -std=c++98 -g3
+CXX_FLAGS := -Wall -Wextra -Werror -std=c++98 # -std=c++98 -g3
 NAME := PmergeMe
 INCLUDE := -I./
 
@@ -21,11 +21,11 @@ OBJ := $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 %.o: %.cpp
-	@$(CXX) $(CPP_FLAGS) $(INCLUDE) -c $^ -o $@
+	@$(CXX) $(CXX_FLAGS) $(INCLUDE) -c $^ -o $@
 	@echo "Compiling ..."
 
 $(NAME): $(OBJ)
-	@$(CXX) $(CPP_FLAGS) $(INCLUDE) $^ -o $@
+	@$(CXX) $(CXX_FLAGS) $(INCLUDE) $^ -o $@
 	@echo "Compiling ..."
 
 clean:
